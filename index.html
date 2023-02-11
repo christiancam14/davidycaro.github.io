@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación Boda</title>
     <link rel="icon" type="image/x-icon" href="https://www.pngmart.com/files/11/Golden-Heart-Frame-PNG-Image.png"/>
-    <link rel="stylesheet" href="/index.css" />
+    <!-- <link rel="stylesheet" href="/index.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -112,14 +112,14 @@ font-family: 'Roboto Slab', serif; */
       }
 
       .contenedor-img-principal .titulo-imagen {
-        position: absolute;
+        /* position: absolute; */
         top: -20px;
         text-align: center;
         margin: 0 auto;
         font-size: 80px;
         font-weight: 600;
-        font-family: "Explora", cursive;
         font-family: "Courgette", cursive;
+        font-family: "Explora", cursive;
         text-shadow: black 0.1em 0em 0.1em;
         z-index: 2;
         color: var(--border-color);
@@ -127,7 +127,7 @@ font-family: 'Roboto Slab', serif; */
 
       .contenedor-img-principal .titulo-oro {
         width: 90%;
-        position: absolute;
+        /* position: absolute; */
         top: 0;
         z-index: 100;
       }
@@ -283,12 +283,16 @@ font-family: 'Roboto Slab', serif; */
 
         .texto-asistencia{
             max-width: 60%;
-            margin: 0 auto;
+            margin: 0 auto 20px;
         }
         
         #countdown{
             max-width: 85%;
             transform: scale(0.9);
+        }
+
+        .contenedor-asistencia{
+            flex-direction: column;
         }
       }
 
@@ -314,7 +318,7 @@ font-family: 'Roboto Slab', serif; */
           <div class="card-content">
             <div class="contenedor-img-principal">
               <h1 class="titulo-imagen">David y Carito</h1>
-              <!-- <img src="/assets/Titulo_principal.webp"> -->
+              <img src="https://lh3.googleusercontent.com/fife/AMPSemdltBQvh6Aa5mPU4vl3eTWfxNTIcN2TOhBrfJOj5Jk8Izm5sH2vZbbvPga_W8z2_XURcIU0w8KOleBQLS3FGfoO5shkDVzG4WWYXNEDh6bJ_Bvke99NUkIZYqy921gRcebKFf_GWLyXB6CzJ11-7p4CqlyhinZHbMuMVht_WmiSfCqU4cfEXgU9EX9C96G-CxSrN8oTmJyjBxqeTDtzDesS6lHaPg20dVz_m7ZDVssTJRDLid4bXG546poOWO0kKmVlU5TnONr2eDAjdMRH2-FcY35FsjIh8Wjt7S463VBynypDyr8M3Hi7i75T837t70xB31hDeSe5IycghIfPjlt0RSi-kW0odZbyfIeFLPhXe8FECXK7ve6zf0nwnkcPitTRqq99BN6e750u7oWw6NvCPvtTaMPQ3RsATHWoLG-TjMQ_AVxBr0nAvP8qXGEKbJKOTe0MyYuP5_IJvCoThgYJ_FQJAWmHprY0eflVzDV-jA6MjpzeMJKzuhcp1nb-eVZYCXPgr2q0QrNJiZfGurODdZhg7NVJin6Jbsx4UXKM-fRxbiSX7p03NZBQIyWZkHiU6zYVF72O_itlvySqSy4AXJcPgQ2mwkH9hd2Vkz_vSpndeR--tUgvDk10r5VFwogJMtPFjE7w7bIS53g0D_Li0ZPNrhhzJYmKOL-jWAeBrfNoCCzTUlIVJrClvmzUgB9ZNOhLfQ8m6RCkj0DnSA4baxk6pJqDb1gYJRVi_CpOQQWKbvutdpaNOVFH8fqXTT-kexiZ2MKYAFSHEdM9DKl91pWCrEqwz2UZ5bsexKCFq8LgoTTn-vCa5btV0C8OwnLnM1ox_HcOY-0TkEf7Y3ziGHl0-AVcbYlVjUZi3UJtJb3X-zX7cByX9s4YdH6sy8vyOXB7Vl2V89BBVeczrLus_ufcaf3_EBvqlNm8fXKaE0juQDIn1GQA-Gk83df4x9Ih4njNJQEvaa6HeO00ykJ0_xVE5OnDha6XTR3UjJVR97wfbn-bzq1P_VeZjWvhNZYw1k8ZnoGgTrbJIsGgLV4QBFUyawK9t1t1cTwrYDH-NwayD7AciLjTjuWX44FBRIMIlkB9isr6UzOHRdy6gsXUj058jbHJH6yEg7pPPeuLUZT1FC4m9CP__U_R_KRBoMOe588sqsi8dCjPC3qeleehT_FWkY3LiE0zKslvZ9rlOLFzHIz4mnh-Y5KhKJ1qzyag8iuCvDqYT1HKvhrbiiU1KEWlV9F6Y43qikVW7YAYg0U8jm1tA-OcoxmlMs3_zHAD1TG6kNjFtcmpIamDQvgpOa3Xl6y0asSnAqWwYLOUb9dtF2Iutt-9xs-FLu0DKVPHabi8GDLvQ5EgW3pS3BtySe0-bHiqxdSJWPlKO4SAIlSMg3XlJeDCPlUJsC0RQ7nrsYPodcZYCpPxmPmY_EB_WCuGK_UE_-LSzPAMFPDRVBkmCIECbLPdg5KwPWsPNyHfSYgp_tk0755yjAQvDawf1rfiuICGteqMqdIMlRCmoEEgiByvvnvPvD9yRM6b-lfwQyQ57jgrj_EYrpQFN49QH1vY6aETChczhkipXVaAmrqAoeLkNOcKFQrEOntx6w=w2560-h961" class="titulo-imagen" style="width: 80%;">
               <img
                 src="https://lh3.googleusercontent.com/fife/AMPSeme7qFoXS5x4SURAypbe8OECTyun17Yjdf9a1WBKgWMlKPYSKIENw81Z0DbkCG5IuH0DU8gUQDOALyTkbuTvO1A0CMb0D0zS_nhw0YG3j8-PmDxbu5SlJwernz3_r_Muk-CvjKODe7DAx_aQ1m0nmfukL0J_2es_JXzfS3dQanqBmCWOs3gnCWwt98HQOmjrXavqAxYWRRTIDg-7omH90WUYFXx9eGgvvm00k0Gj0e8euFmGw_-7u80eSigPdU4-ZnCnHc06kF6cohkdOgGu18rpRAMhoLlj1eEjG3w3xtCSP7CF-JDTuCr4lU04-dpdpGtGiM00RHnpUhQ4CJbegiGh5FjMrFY39S1iO5nfpYYHlxNeg0Rto1XobRmTgh3AgCn6XKe2PSeYnubAJ4kB8tlfJVoT9HhTRwHN4QMZ6vsBlCE_NuwWLsC7BDMLamSqdEyTRUQn_RfhpFWGNTpvyFQpJiP8bU8MXlXNZD665cVY5JEuKUGnHGcMOi644shE_-AUJJlI1DCS_renQMRzPZ3Wjo5aUzHeZP4DGGRMqPuUZ2YMO5o3k9kT_zaZI5oodByKu3oEKgWZzODyfEL5O7xo9nZ3XfqNVEpS-qWvVBVokjqEjVT0omLYy9YfsPyAcx9m6wa1SEJnZ47v7zFPCa5db52O4qnbJv4FG-CHVqIobIFIShJGtQ8pqljzy51Ddv3BYYTvGmCv4UHis7J8ZXsbbJJZ9yGDi88YGuQyRFHIJdxxtgkFCDV4B8TCGLFSV11kX86JdxDIJsjxfoPAQqtR1T6QCtmMHeX3GLNAO6XWC0z6bin0FxHcQa0kxFsJIqUOmE7v07o9fYhAwWiWHOXVCpFQoH--hEjHYmd-VIVUdjJA1pg0Ls1iVnUPjDmiRxla9t5PKWvIoT53YZJ7HSodG5NFudth2vboT4vK1RRfudog8YJdXoTT-hbRuwqUUdZcWV52uHymZNh5SbZ6JtIGF_0CmOl1YniiAK42jO7DTKqGzKWzrwl1U3O9fViJCcrEi8Ayde5PpXlC3JxTQsqHmuRWowqD9b8Yy_u0kUFnbJnlNS7SoQGZZCvhQ8KEImtnqrILXlBENquZIGy2L6Ni189z7SO6NE5sAVhMuTafFLGtVv7UWjWWVR9o53-XnyEzFOrA6icRmV7CNMZOLRcySZ23VtH4tEpdMNBGBm3hgumYm_lge14eTlqRM7lfV9r2Ds1NvRJk5ujggF_TRt2U_iV48iARNFPVOWkfgqXiHUnvhVo32jAFZmU_IgPe89sxKpMCGQVZjRwV8nfj4v0XJo0tUfRWhIoyTN4WVNdiFrwVlM8aALJfEnfQHPovl5gukF3pYrdM1b2Y1y5ICYu257nDLS29q3vzgG0oB4TuVfhyxSLpzeNs4Pz8-o_h40tPpFfZ5u5nW0BVK2succVOppSIpIayPvdirheHcv7BGPYE2IFS5ef4zQ61TUg-mMQdxl_ZDsjzawM5Mgdjp2v_zjuTaZGMn5Sz71-9hnCJFKoZLXYyi6-28X7Yncx6SDbb7iCXomOsBbnfPM3Owia0iCZUVeTmZpg0DdRe6zgmtYC7yWPtLwvkkK22Xpqquw=w1136-h951"
                 class="img-david-carito"
