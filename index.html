@@ -271,6 +271,25 @@ font-family: 'Roboto Slab', serif; */
         .contenedor-img-principal .descripcion span {
           font-size: 20px;
         }
+
+        .contenedor-ubicaciones {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contenedor-ubicacion {
+            width: 100%;
+        }
+
+        .texto-asistencia{
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        
+        #countdown{
+            max-width: 85%;
+            transform: scale(0.9);
+        }
       }
 
       @keyframes nebulahero {
@@ -388,7 +407,7 @@ font-family: 'Roboto Slab', serif; */
             <!-- Conteo regresivo -->
             <table id="countdown"></table>
             <div style="margin: 30px 0">
-              <p>Haz click aquí para confirmar tu asistencia</p>
+              <p class="texto-asistencia">Haz click aquí para confirmar tu asistencia</p>
               <div class="contenedor-asistencia">
                 <a href="#" class="confirmar-asistencia"
                   >Whatsapp
