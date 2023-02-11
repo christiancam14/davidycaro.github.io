@@ -1,95 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación Boda</title>
-    <link rel="icon" type="image/x-icon" href="https://www.pngmart.com/files/11/Golden-Heart-Frame-PNG-Image.png">
-    <link rel="stylesheet" href="/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jura:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap&family=Explora&display=swap&family=Courgette" rel="stylesheet">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.pngmart.com/files/11/Golden-Heart-Frame-PNG-Image.png"
+    />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jura:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap&family=Explora&display=swap&family=Courgette"
+      rel="stylesheet"
+    />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Courgette&family=EB+Garamond&family=Jura:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet"> -->
-</head>
-<body>
+    <style>
+      :root {
+        --border-color: linear-gradient(
+          to right,
+          /* tomato 0%, */ #b19600 0%,
+          #e0cb89 100%
+        );
+
+        --card-color: black;
+      }
+
+      /* font-family: 'EB Garamond', serif;
+font-family: 'Roboto Slab', serif; */
+
+      body {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        background-color: #000000;
+        box-sizing: border-box;
+        color: #ffff;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .contenedor-1200 {
+        width: 90%;
+        max-width: 1200px;
+        padding: 20px;
+        margin: 10px auto;
+      }
+
+      .card {
+        background: var(--border-color);
+        aspect-ratio: 10/16;
+        width: 100%;
+        padding: 3px;
+        border-radius: 12px;
+        position: unset;
+        /* position: relative; */
+        box-shadow: 0 0 10px gold;
+        /* animation: nebulahero 20s linear infinite;
+    -webkit-animation: nebulahero 4s infinite linear; */
+      }
+
+      .card-body {
+        position: unset;
+        background: var(--card-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .hoja-izq {
+        position: fixed;
+        bottom: -20px;
+        left: -20px;
+        /* transform: rotate(-30deg); */
+        width: 250px;
+        filter: drop-shadow(0 2px 30px rgba(0, 0, 0, 0.7));
+      }
+
+      .hoja-der {
+        position: fixed;
+        bottom: -20px;
+        right: -20px;
+        /* transform: rotate(-30deg); */
+        width: 250px;
+        filter: drop-shadow(0 2px 30px rgba(0, 0, 0, 0.8));
+      }
+
+      .card-content {
+        height: calc(100% - 20px);
+        margin: 10px;
+        text-align: center;
+      }
+
+      .titulo-principal {
+        font-size: 120px;
+        font-weight: 600;
+        font-family: "Explora", cursive;
+      }
+
+      .contenedor-img-principal {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .contenedor-img-principal .titulo-imagen {
+        position: absolute;
+        top: -20px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 80px;
+        font-weight: 600;
+        font-family: "Explora", cursive;
+        font-family: "Courgette", cursive;
+        text-shadow: black 0.1em 0em 0.1em;
+        z-index: 2;
+        color: var(--border-color);
+      }
+
+      .contenedor-img-principal .titulo-oro {
+        width: 90%;
+        position: absolute;
+        top: 0;
+        z-index: 100;
+      }
+
+      .contenedor-img-principal .descripcion {
+        /* position: absolute; */
+        bottom: 10px;
+        text-align: center;
+        margin: 20px auto;
+        font-size: 40px;
+        /* font-weight: 400; */
+        line-height: 40px;
+        font-family: "Explora", cursive;
+        font-family: "Courgette", cursive;
+        text-shadow: black 0.1em 0em 0.1em;
+      }
+
+      .contenedor-img-principal .descripcion span {
+        font-size: 40px;
+      }
+
+      .historia {
+        max-width: 80%;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .contenedor-img-principal .img-david-carito {
+        width: 60%;
+        /* border-radius: 3px; */
+        border-radius: 50%;
+        filter: drop-shadow(0 0px 10px rgba(224, 203, 137, 0.7));
+        transition: all 0.25s linear;
+      }
+
+      .contenedor-img-principal .img-david-carito:hover {
+        filter: drop-shadow(0 0px 20px rgba(224, 203, 137, 0.7));
+      }
+
+      .contenedor-img-principal .img-arco {
+        position: absolute;
+        width: 80%;
+      }
+
+      .btn-musica {
+        background-image: url("../assets/btn-play.webp");
+        background-size: contain;
+        /* background-color: transparent; */
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .btn-musica:hover {
+      }
+
+      .btn-musica svg {
+        opacity: 0;
+      }
+
+      #countdown {
+        margin: 0 auto;
+      }
+
+      #countdown tr:first-child {
+        font-size: 50px;
+        font-family: "Jura", sans-serif;
+        filter: drop-shadow(0 2px 30px rgba(255, 255, 255, 0.8));
+        /* font-weight: 600; */
+      }
+
+      #countdown tr:not(:first-child) {
+        font-size: 20px;
+        font-family: "Jura", sans-serif;
+        filter: drop-shadow(0 2px 30px rgba(255, 255, 255, 0.8));
+        /* font-weight: 600; */
+      }
+
+      #countdown tr td {
+        filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.8));
+        /* font-weight: 600; */
+      }
+
+      /* font-family: 'EB Garamond', serif;
+font-family: 'Roboto Slab', serif; */
+
+      #countdown td {
+        width: 100px;
+        text-align: center;
+        /* background-color: red; */
+      }
+
+      .contenedor-asistencia {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .confirmar-asistencia {
+        background-color: #ffff;
+        text-decoration: none;
+        padding: 8px 16px;
+        color: #000000;
+        font-weight: 600;
+        border-radius: 3px;
+        transition: padding 0.25s, font-size 0.25s;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        min-width: 160px;
+      }
+
+      .contenedor-ubicaciones {
+        display: flex;
+      }
+
+      .contenedor-ubicacion {
+        width: 50%;
+      }
+
+      .confirmar-asistencia:hover {
+        padding: 10px 18px;
+        font-size: 16px;
+      }
+
+      @media (width < 720px) {
+        .contenedor-img-principal .titulo-imagen {
+          position: inherit;
+          font-size: 40px;
+        }
+
+        .contenedor-img-principal .descripcion {
+          font-size: 30px;
+        }
+
+        .contenedor-img-principal .descripcion span {
+          font-size: 20px;
+        }
+      }
+
+      @keyframes nebulahero {
+        0% {
+          -webkit-filter: hue-rotate(0deg);
+        }
+        50% {
+          -webkit-filter: hue-rotate(-20deg);
+        }
+        100% {
+          -webkit-filter: hue-rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
     <article class="contenedor-1200">
-        <div class="card">
-            <div class="card-body">
-                <!-- <img src="/assets/HojasIzq.png" alt="" class="hoja-izq">
+      <div class="card">
+        <div class="card-body">
+          <!-- <img src="/assets/HojasIzq.png" alt="" class="hoja-izq">
                 <img src="/assets/HojasDer.png" alt="" class="hoja-der"> -->
-                <div class="card-content">
-                    <div class="contenedor-img-principal">
-                        <h1 class="titulo-imagen">David y Carito</h1>
-                        <!-- <img src="/assets/Titulo_principal.webp"> -->
-                        <img src="/assets/img2.webp" class="img-david-carito" alt="img-david-karito">
-                        <!-- <img src="/assets/btn-play.png" class="img-arco" alt="img-david-karito"> -->
-                        <p class="descripcion">
-                            Nuestra boda
-                            <br>
-                            <span>
-                                Junio 10
-                            </span>
-                        </p>
-                    </div>
-                    <button class="btn-musica" style="display: none">
-                        <svg fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64.00 64.00" enable-background="new 0 0 64 64" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="3.4560000000000004"></g><g id="SVGRepo_iconCarrier"> <g id="Play"> <path d="M46.0136986,31.1054993L25.1973,20.6973c-0.3096008-0.1532993-0.6777992-0.1387005-0.9727001,0.0438995 C23.9297009,20.9237995,23.75,21.2451,23.75,21.5918007v20.8163986c0,0.3467026,0.1797009,0.6679993,0.4745998,0.8506012 C24.3848,43.3583984,24.5674,43.4081993,24.75,43.4081993c0.1532993,0,0.3057003-0.035099,0.4473-0.1054001l20.8163986-10.4081993 c0.3388023-0.1699982,0.5527-0.5157013,0.5527-0.8945999C46.5663986,31.6210995,46.3525009,31.2754002,46.0136986,31.1054993z M25.75,40.7901001v-17.580101L43.330101,32L25.75,40.7901001z"></path> </g> </g></svg>
-                    </button>
-                    <!-- Botón de reproducir música -->
-                    <p>Dale play aquí</p>
-                    <h2>Nos conocimos el</h2>
-                    <p class="historia">Esta historia comenzó en el año 2011 nos conocimos de la manera más inesperada, para nosotros casualidad, para Dios causalidad.                                       Hoy 12 años después tenemos un hogar que hemos construido con esfuerzo y dedicación el cual queremos conservar hasta que Dios lo permita y por eso hemos decidido unir nuestras vidas ante Dios...                                Y es un privilegio celebrar el amor que nos une y nos ha motivado a seguir construyendo esta linda historia de la cual queremos seas parte...</p>
-                    <h2>¿Dónde es?</h2>
-                        <div class="contenedor-ubicaciones">
-
-                            <div class="contenedor-ubicacion">
-                                <p><strong style="font-size: 20px;">Basílica</strong><br> nuestra señora del rosario <br> Moniquirá</p>
-                            <div class="contenedor-asistencia">
-                                <a href="https://goo.gl/maps/1GwcNWA8A9dr4hTm9" target="_blank" class="confirmar-asistencia">Ver ubicación</a>
-                            </div>
-                        </div>
-                        <div class="contenedor-ubicacion">
-                            <p><strong style="font-size: 20px;">Recepción</strong><br>Club imperio <br> km 2 Vía Santander</p>
-                            <div class="contenedor-asistencia">
-                                <a href="https://www.google.com/maps/search/5.930696,+-73.630895" target="_blank" class="confirmar-asistencia">Ver ubicación</a>
-                            </div>
-                        </div>
-                    </div>
-                    <h2>¿Cuánto falta?</h2>
-                    <!-- Conteo regresivo -->
-                    <table id="countdown"></table>
-                    <div style="margin: 30px 0;">
-                        <p>Haz click aquí para confirmar tu asistencia</p>
-                        <div class="contenedor-asistencia">
-                            <a href="#" class="confirmar-asistencia">Whatsapp <img style="width: 30px;" src="/assets/Icono-whatsapp.png"> </a>
-                            <a href="tel:3043776214" class="confirmar-asistencia">Llamar <img style="width: 30px;" src="/assets/Icono-telefono.png"> </a>
-                        </div>
-                    </div>
-                    <!-- Calendario para agendar cita -->
-                    <!-- Fotos de ellos -->
-                    <!-- Información boda -->
-                    <!-- Ubicación iglesia y , hora, maps -->
-                    <!-- Código de vestimenta -->
-                    <!-- Regalos  -->
-                    <!-- Menú -->
-                    <!-- Subir fotos a redes sociales -->
-                    
-
-                    <!-- Confirmar asistencia -->
-                    <!-- Whatsapp -->
-                    <!-- Te esperamos -->
-             
-
-                    
-                    
-                    
-                    
-                </div>
+          <div class="card-content">
+            <div class="contenedor-img-principal">
+              <h1 class="titulo-imagen">David y Carito</h1>
+              <!-- <img src="/assets/Titulo_principal.webp"> -->
+              <img
+                src="/assets/img2.webp"
+                class="img-david-carito"
+                alt="img-david-karito"
+              />
+              <!-- <img src="/assets/btn-play.png" class="img-arco" alt="img-david-karito"> -->
+              <p class="descripcion">
+                Nuestra boda
+                <br />
+                <span> Junio 10 </span>
+              </p>
             </div>
-        </div>
-        
-    </article>
+            <button class="btn-musica" style="display: none">
+              <svg
+                fill="#000000"
+                height="200px"
+                width="200px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 64.00 64.00"
+                enable-background="new 0 0 64 64"
+                xml:space="preserve"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#CCCCCC"
+                  stroke-width="3.4560000000000004"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Play">
+                    <path
+                      d="M46.0136986,31.1054993L25.1973,20.6973c-0.3096008-0.1532993-0.6777992-0.1387005-0.9727001,0.0438995 C23.9297009,20.9237995,23.75,21.2451,23.75,21.5918007v20.8163986c0,0.3467026,0.1797009,0.6679993,0.4745998,0.8506012 C24.3848,43.3583984,24.5674,43.4081993,24.75,43.4081993c0.1532993,0,0.3057003-0.035099,0.4473-0.1054001l20.8163986-10.4081993 c0.3388023-0.1699982,0.5527-0.5157013,0.5527-0.8945999C46.5663986,31.6210995,46.3525009,31.2754002,46.0136986,31.1054993z M25.75,40.7901001v-17.580101L43.330101,32L25.75,40.7901001z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <!-- Botón de reproducir música -->
+            <p>Dale play aquí</p>
+            <h2>Nos conocimos el</h2>
+            <p class="historia">
+              Esta historia comenzó en el año 2011 nos conocimos de la manera
+              más inesperada, para nosotros casualidad, para Dios causalidad.
+              Hoy 12 años después tenemos un hogar que hemos construido con
+              esfuerzo y dedicación el cual queremos conservar hasta que Dios lo
+              permita y por eso hemos decidido unir nuestras vidas ante Dios...
+              Y es un privilegio celebrar el amor que nos une y nos ha motivado
+              a seguir construyendo esta linda historia de la cual queremos seas
+              parte...
+            </p>
+            <h2>¿Dónde es?</h2>
+            <div class="contenedor-ubicaciones">
+              <div class="contenedor-ubicacion">
+                <p>
+                  <strong style="font-size: 20px">Basílica</strong><br />
+                  nuestra señora del rosario <br />
+                  Moniquirá
+                </p>
+                <div class="contenedor-asistencia">
+                  <a
+                    href="https://goo.gl/maps/1GwcNWA8A9dr4hTm9"
+                    target="_blank"
+                    class="confirmar-asistencia"
+                    >Ver ubicación</a
+                  >
+                </div>
+              </div>
+              <div class="contenedor-ubicacion">
+                <p>
+                  <strong style="font-size: 20px">Recepción</strong><br />Club
+                  imperio <br />
+                  km 2 Vía Santander
+                </p>
+                <div class="contenedor-asistencia">
+                  <a
+                    href="https://www.google.com/maps/search/5.930696,+-73.630895"
+                    target="_blank"
+                    class="confirmar-asistencia"
+                    >Ver ubicación</a
+                  >
+                </div>
+              </div>
+            </div>
+            <h2>¿Cuánto falta?</h2>
+            <!-- Conteo regresivo -->
+            <table id="countdown"></table>
+            <div style="margin: 30px 0">
+              <p>Haz click aquí para confirmar tu asistencia</p>
+              <div class="contenedor-asistencia">
+                <a href="#" class="confirmar-asistencia"
+                  >Whatsapp
+                  <img style="width: 30px" src="/assets/Icono-whatsapp.png" />
+                </a>
+                <a href="tel:3043776214" class="confirmar-asistencia"
+                  >Llamar
+                  <img style="width: 30px" src="/assets/Icono-telefono.png" />
+                </a>
+              </div>
+            </div>
+            <!-- Calendario para agendar cita -->
+            <!-- Fotos de ellos -->
+            <!-- Información boda -->
+            <!-- Ubicación iglesia y , hora, maps -->
+            <!-- Código de vestimenta -->
+            <!-- Regalos  -->
+            <!-- Menú -->
+            <!-- Subir fotos a redes sociales -->
 
-</body>
-<script src="index.js"></script>
+            <!-- Confirmar asistencia -->
+            <!-- Whatsapp -->
+            <!-- Te esperamos -->
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+  <script src="index.js"></script>
 </html>
