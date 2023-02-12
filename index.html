@@ -267,6 +267,19 @@ font-family: 'Roboto Slab', serif; */
         padding: 0 40px;
       }
 
+      .reveal{
+        position: relative;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 1s all ease;
+    }
+    
+    .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
       @media (width < 767px) {
         .contenedor-img-principal .titulo-imagen {
           position: inherit;
@@ -663,7 +676,7 @@ font-family: 'Roboto Slab', serif; */
             <div class="contenedor-sec-carrusel">
 
             
-            <section class="seccion-carrusel">
+            <section class="seccion-carrusel reveal">
               <div id="drag-container">
                 <div id="spin-container">
                   <!-- Add your images (or video) here -->
@@ -701,8 +714,8 @@ font-family: 'Roboto Slab', serif; */
             </section>
 
             </div>
-            <h2 class="como-llegar">¿Cómo llegar?</h2>
-            <div class="contenedor-ubicaciones">
+            <h2 class="como-llegar reveal">¿Cómo llegar?</h2>
+            <div class="contenedor-ubicaciones reveal">
               <div class="contenedor-ubicacion">
                 <p style="line-height: 26px">
                   <strong style="font-size: 20px">Basílica</strong><br />
@@ -736,14 +749,14 @@ font-family: 'Roboto Slab', serif; */
                 </div>
               </div>
             </div>
-            <h2 class="como-llegar">¿Cuánto falta?</h2>
+            <h2 class="como-llegar reveal">¿Cuánto falta?</h2>
             <!-- Conteo regresivo -->
-            <table id="countdown"></table>
+            <table id="countdown" class="reveal"></table>
             <div style="margin: 30px 0">
-              <p class="texto-asistencia">
+              <p class="texto-asistencia reveal">
                 Haz clic aquí para confirmar tu asistencia
               </p>
-              <div class="contenedor-asistencia">
+              <div class="contenedor-asistencia reveal">
                 <a href="https://wa.link/c25f1i" class="confirmar-asistencia"
                   >Whatsapp
                   <img
