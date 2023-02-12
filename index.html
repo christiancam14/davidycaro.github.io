@@ -294,7 +294,13 @@ font-family: 'Roboto Slab', serif; */
 
         #app-cover{
             transform: scale(0.7) translateX(-13%);
-            margin: 40px auto 0px !important;
+            margin: -20px auto 0px !important;
+        }
+
+        #app-cover:has(#album-art.active) {
+            width: 430px;
+            height: 190px;
+            margin: 140px auto 0px !important;
         }
 
         .contenedor-img-principal .descripcion {
