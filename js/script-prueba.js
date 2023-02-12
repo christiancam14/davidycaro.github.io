@@ -15,18 +15,18 @@ const tProgress = document.getElementById("current-time");
 const tTime = document.getElementById("track-length");
 let seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false;
 const albums = [
-    "Dawn",
-    "Me & You",
-    "Electro Boy",
-    "Home",
-    "Proxy (Original Mix)"
+    "Andrés Cepeda",
+    "Andrés Cepeda",
+    "Andrés Cepeda",
+    "Andrés Cepeda",
+    "Andrés Cepeda"
 ];
 const trackNames = [
-    "Skylike - Dawn",
-    "Alex Skrindo - Me & You",
-    "Kaaze - Electro Boy",
-    "Jordan Schor - Home",
-    "Martin Garrix - Proxy"
+    "Te voy a amar",
+    "Te voy a amar",
+    "Te voy a amar",
+    "Te voy a amar",
+    "Te voy a amar"
 ];
 const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
 const trackUrl2 = [
