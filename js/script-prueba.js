@@ -29,19 +29,12 @@ const trackNames = [
     "Te voy a amar"
 ];
 const albumArtworks = ["_1", "_2", "_3", "_4", "_5"];
-const trackUrl2 = [
-    "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/2.mp3",
-    "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/1.mp3",
-    "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/3.mp3",
-    "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/4.mp3",
-    "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3"
-];
 const trackUrl = [
-    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
-    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
-    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
-    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
-    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3"
+    "https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3"
 ]
 // const playPreviousTrackButton = document.getElementById("play-previous");
 // const playNextTrackButton = document.getElementById("play-next");
@@ -112,12 +105,13 @@ function updateCurrTime() {
     let tFlag = false;
     if (!tFlag) {
         tFlag = true;
-        document.querySelector(".track-time").classList.add("active");
+        trackTime.classList.add("active");
     }
     
-    const audio = new Audio();
+    // const audio = new Audio("https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3");
     let curMinutes = Math.floor(audio.currentTime / 60);
     let curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+    console.log(audio.currentTime);
     
     let durMinutes = Math.floor(audio.duration / 60);
     let durSeconds = Math.floor(audio.duration - durMinutes * 60);
@@ -131,15 +125,15 @@ function updateCurrTime() {
     if (durSeconds < 10) durSeconds = "0" + durSeconds;
     
     if (isNaN(curMinutes) || isNaN(curSeconds)) {
-        document.querySelector(".t-progress").textContent = "00:00";
+        tProgress.textContent = "00:00";
     } else {
-        document.querySelector(".t-progress").textContent = curMinutes + ":" + curSeconds;
+        tProgress.textContent = curMinutes + ":" + curSeconds;
     }
     
     if (isNaN(durMinutes) || isNaN(durSeconds)) {
-        document.querySelector(".t-time").textContent = "00:00";
+        tTime.textContent = "00:00";
     } else {
-        document.querySelector(".t-time").textContent = durMinutes + ":" + durSeconds;
+        tTime.textContent = durMinutes + ":" + durSeconds;
     }
     
     if (
@@ -148,17 +142,17 @@ function updateCurrTime() {
         isNaN(durMinutes) ||
         isNaN(durSeconds)
     ) {
-        document.querySelector(".track-time").classList.remove("active");
+        trackTime.classList.remove("active");
     } else {
-        document.querySelector(".track-time").classList.add("active");
+        trackTime.classList.add("active");
     }
     
-    document.querySelector(".seek-bar").style.width = playProgress + "%";
+    document.querySelector("#seek-bar").style.width = playProgress + "%";
     
     if (playProgress === 100) {
         document.querySelector(".fa").className = "fa fa-play";
-        document.querySelector(".seek-bar").style.width = "0%";
-        document.querySelector(".t-progress").textContent = "00:00";
+        document.querySelector("#seek-bar").style.width = "0%";
+        tProgress.textContent = "00:00";
         document.querySelector(".album-art").classList.remove("buffering", "active");
         clearInterval(buffInterval);
     }
@@ -194,13 +188,13 @@ function selectTrack(flag) {
             }
     
             seekBar.style.width = "0%";
-            trackTime.classList.remove("active");
+            // trackTime.classList.remove("active");
             tProgress.textContent = "00:00";
             tTime.textContent = "00:00";
         
             currAlbum = albums[currIndex];
             currTrackName = trackNames[currIndex];
-            currArtwork = albumArtworks[currIndex];
+            currArtwork = "https://lh3.googleusercontent.com/fife/AMPSeme7qFoXS5x4SURAypbe8OECTyun17Yjdf9a1WBKgWMlKPYSKIENw81Z0DbkCG5IuH0DU8gUQDOALyTkbuTvO1A0CMb0D0zS_nhw0YG3j8-PmDxbu5SlJwernz3_r_Muk-CvjKODe7DAx_aQ1m0nmfukL0J_2es_JXzfS3dQanqBmCWOs3gnCWwt98HQOmjrXavqAxYWRRTIDg-7omH90WUYFXx9eGgvvm00k0Gj0e8euFmGw_-7u80eSigPdU4-ZnCnHc06kF6cohkdOgGu18rpRAMhoLlj1eEjG3w3xtCSP7CF-JDTuCr4lU04-dpdpGtGiM00RHnpUhQ4CJbegiGh5FjMrFY39S1iO5nfpYYHlxNeg0Rto1XobRmTgh3AgCn6XKe2PSeYnubAJ4kB8tlfJVoT9HhTRwHN4QMZ6vsBlCE_NuwWLsC7BDMLamSqdEyTRUQn_RfhpFWGNTpvyFQpJiP8bU8MXlXNZD665cVY5JEuKUGnHGcMOi644shE_-AUJJlI1DCS_renQMRzPZ3Wjo5aUzHeZP4DGGRMqPuUZ2YMO5o3k9kT_zaZI5oodByKu3oEKgWZzODyfEL5O7xo9nZ3XfqNVEpS-qWvVBVokjqEjVT0omLYy9YfsPyAcx9m6wa1SEJnZ47v7zFPCa5db52O4qnbJv4FG-CHVqIobIFIShJGtQ8pqljzy51Ddv3BYYTvGmCv4UHis7J8ZXsbbJJZ9yGDi88YGuQyRFHIJdxxtgkFCDV4B8TCGLFSV11kX86JdxDIJsjxfoPAQqtR1T6QCtmMHeX3GLNAO6XWC0z6bin0FxHcQa0kxFsJIqUOmE7v07o9fYhAwWiWHOXVCpFQoH--hEjHYmd-VIVUdjJA1pg0Ls1iVnUPjDmiRxla9t5PKWvIoT53YZJ7HSodG5NFudth2vboT4vK1RRfudog8YJdXoTT-hbRuwqUUdZcWV52uHymZNh5SbZ6JtIGF_0CmOl1YniiAK42jO7DTKqGzKWzrwl1U3O9fViJCcrEi8Ayde5PpXlC3JxTQsqHmuRWowqD9b8Yy_u0kUFnbJnlNS7SoQGZZCvhQ8KEImtnqrILXlBENquZIGy2L6Ni189z7SO6NE5sAVhMuTafFLGtVv7UWjWWVR9o53-XnyEzFOrA6icRmV7CNMZOLRcySZ23VtH4tEpdMNBGBm3hgumYm_lge14eTlqRM7lfV9r2Ds1NvRJk5ujggF_TRt2U_iV48iARNFPVOWkfgqXiHUnvhVo32jAFZmU_IgPe89sxKpMCGQVZjRwV8nfj4v0XJo0tUfRWhIoyTN4WVNdiFrwVlM8aALJfEnfQHPovl5gukF3pYrdM1b2Y1y5ICYu257nDLS29q3vzgG0oB4TuVfhyxSLpzeNs4Pz8-o_h40tPpFfZ5u5nW0BVK2succVOppSIpIayPvdirheHcv7BGPYE2IFS5ef4zQ61TUg-mMQdxl_ZDsjzawM5Mgdjp2v_zjuTaZGMn5Sz71-9hnCJFKoZLXYyi6-28X7Yncx6SDbb7iCXomOsBbnfPM3Owia0iCZUVeTmZpg0DdRe6zgmtYC7yWPtLwvkkK22Xpqquw=w1136-h951";
         
             audio.src = trackUrl[currIndex];
         
@@ -222,11 +216,6 @@ function selectTrack(flag) {
         Array.from(albumArt.getElementsByTagName("img")).forEach((img) => {
             img.classList.remove("active");
         });
-        document.getElementById(currArtwork).classList.add("active");
-    
-        // bgArtworkUrl = document.getElementById(currArtwork).src;
-    
-        // bgArtwork.style.backgroundImage = `url("${bgArtworkUrl}")`;
     } else {
         if (flag === 0 || flag === 1) currIndex--;
         else currIndex++;
@@ -234,7 +223,7 @@ function selectTrack(flag) {
 }
     
 function initPlayer() {
-    audio = new Audio();
+    audio = new Audio("https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3");
 
     selectTrack(0);
 
@@ -252,14 +241,6 @@ function initPlayer() {
 
     audio.addEventListener("timeupdate", updateCurrTime);
 
-    /*
-    playPreviousTrackButton.addEventListener("click", function() {
-        selectTrack(-1);
-    });
-    playNextTrackButton.addEventListener("click", function() {
-        selectTrack(1);
-    });
-    */
 }
 
 initPlayer();
