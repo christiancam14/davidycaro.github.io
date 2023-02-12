@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/fife/AMPSemejEj_D1V684lLilcJqwV5gRq7o23XppFsiMy4w8-Bx8apmqljIIe7-TtrLdRW0VQqBXBrSjsGkhG7MY9qyW5s6HW_jVvN8gFQeUorq-SdDcOMHvjmI9D7VO3ixhJswoHv_QkhhSCB1yquJ5LYOY54rC0VBaZRkpL1-S-_u8NfwyYXy9NXvcIh-kp-Te6Ent8v4AQGfh6Fagbov5DdAGjcFtWn-ePECh7ZLAq1qWZRU1e7GE4ffwVUQV4WibD_iWfVRGqQo4NJqMamoE5A9R8z9vQgO7r1W6J5j0NyocZtYChJ4tLGCD53e5laNR_viOnl8KB5DPFuj8O-HNRXBeDZXgntBPxYQEyiGHWiff1dDyTWThFs390DfjyNee2y3kEOibgzol82GzIZynW8AtZ6v9FHC2LPDdJjS2courHWV2LyGs2XtbM_GMJTQmZw6_LVC-hhwIMtgwHlq4-UBjoC6vOmdlWUJPthDzCyhiHeuc4pDCwVmD9ZdHXPqcSIJqM_h5Zf_JSckke3sHfs-BJ50jEe8NaKfXNyuD7UxXhMt2u6LoVDr8swZ5TYMHnSd3KevfJaY2GyUASRnAItMz56GwodM-mjlOe1ghNbbEGQNQZV_yxhJXJUPCef-r5-VsgicGvU6EqswL5MImkqKs44IogMzexXPQ7dZmN6Y9cwX2648kMi4Obk_HL9qBTK-PMyFGe9qxdeIJm7VLCO_8-6ygHa7n8qxnpDHTKtVWAcLBwMncSXApPMDgpTk9rRg1s_GBzXaxsHWp2h6__EmummfbzJhzmCX8IpBcrDQK3OZNsl9nWzwP8jZoa1guCvuqqTWpBJzaRhqGYnVspYZGrdTHjcwLBf9kbOCa9qZWqYAd-cKUG7Eu3jVMbuksc-HfajJ75UkLCyYZYkrcL7qPbnJjAccoPaP8X6kRQslo8ubCc5kVhryrFEqQOcdx-d5VH5bvVxIAI81YiS6fnW1-h1Gc6FVQUK0ZIlYZ_mE4o7PHqypThtWSkb0-t20L1Wa0pyvC-9ddFXb0sm4XfcD8tP8ugnTj08RfSnrjkT6EqMBH5b58GrWp_UkjhxkToCoEn3BTEKLK0ht7_IOeMK7MAIbVQwMztQArqZ8tlImLsgP8PstcdeHL_in5uBShHv0ueVUBXw0Yh0T_t4yZs5pM30Ykf5QK26NAbqwrrL2N9c0jzZfpXCitbpkznOg00lwZeuKO2qmfGfkxtCW6lPzJSzmOV3HtDy9b4Rsrf1VQHfs_pFVtbPZig42Vltyuw4hItGpX7vjLt79-Ux9zGeT3XXXELsChYso35hEVmMjyRhnpT-mFlY-WRUTjfW_sj8_YNolGlCkDqMZCoM2VERLEUCkzgLoO2zFdyLh8SV-AWHbI6-p6Ey7YbEGqmer6QNsxiYdEhl6Fn7HTeFywdhy3WBzQt7QCJFvwpI0i9t7ul5PegStdQUaeZ3djiHDNUia9HOSU5CSP4LWUdIpYEKgzSG7xKiXIMd6CUoBUTQMfVQbNdpUM59KUnN4PTAKDrM1_ZZY88uufIj0nGiN8n8rAi1YNtiOrOm224iT8OzN5z-x6C8wAGY3qVMqsaZqfiAUUw=w2560-h904">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title>Nuestra boda ♥️</title>
     <style>
       * {
@@ -461,7 +462,35 @@ font-family: 'Roboto Slab', serif; */
     display: flex;
     justify-content: space-between;
   }
+
+  #progressBar {
+  width: 100%;
+  height: 5px;
+  background-color: lightgray;
+  margin: 10px 0;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background-color: green;
+}
+
   
+    #muteButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+    }
+
+    #controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
   /* La animación para las luciernagas */
   @keyframes firefly {
     0% {
@@ -542,6 +571,7 @@ font-family: 'Roboto Slab', serif; */
     
     <article class="contenedor-1200">
       <div class="card">
+        
         <div class="card-body">
             
           <!-- <img src="/assets/HojasIzq.png" alt="" class="hoja-izq">
@@ -566,38 +596,58 @@ font-family: 'Roboto Slab', serif; */
                     <span> Junio 10 </span>
                 </p>
                 </div>
-            <button class="btn-musica" style="display: none">
-              <svg
-                fill="#000000"
-                height="200px"
-                width="200px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 64.00 64.00"
-                enable-background="new 0 0 64 64"
-                xml:space="preserve"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke="#CCCCCC"
-                  stroke-width="3.4560000000000004"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <g id="Play">
-                    <path
-                      d="M46.0136986,31.1054993L25.1973,20.6973c-0.3096008-0.1532993-0.6777992-0.1387005-0.9727001,0.0438995 C23.9297009,20.9237995,23.75,21.2451,23.75,21.5918007v20.8163986c0,0.3467026,0.1797009,0.6679993,0.4745998,0.8506012 C24.3848,43.3583984,24.5674,43.4081993,24.75,43.4081993c0.1532993,0,0.3057003-0.035099,0.4473-0.1054001l20.8163986-10.4081993 c0.3388023-0.1699982,0.5527-0.5157013,0.5527-0.8945999C46.5663986,31.6210995,46.3525009,31.2754002,46.0136986,31.1054993z M25.75,40.7901001v-17.580101L43.330101,32L25.75,40.7901001z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </button>
+            
             <!-- Botón de reproducir música -->
             <p>Dale play aquí</p>
+            <div id="app-cover">
+                <div id="player">
+                    <div id="player-track">
+                    <div id="album-name"></div>
+                    <div id="track-name"></div>
+                    <div id="track-time">
+                        <div id="current-time"></div>
+                        <div id="track-length"></div>
+                    </div>
+                    <div id="s-area">
+                        <div id="ins-time"></div>
+                        <div id="s-hover"></div>
+                        <div id="seek-bar"></div>
+                    </div>
+                    </div>
+                    <div id="player-content">
+                    <div id="album-art">
+                        <img src="https://lh3.googleusercontent.com/fife/AMPSeme7qFoXS5x4SURAypbe8OECTyun17Yjdf9a1WBKgWMlKPYSKIENw81Z0DbkCG5IuH0DU8gUQDOALyTkbuTvO1A0CMb0D0zS_nhw0YG3j8-PmDxbu5SlJwernz3_r_Muk-CvjKODe7DAx_aQ1m0nmfukL0J_2es_JXzfS3dQanqBmCWOs3gnCWwt98HQOmjrXavqAxYWRRTIDg-7omH90WUYFXx9eGgvvm00k0Gj0e8euFmGw_-7u80eSigPdU4-ZnCnHc06kF6cohkdOgGu18rpRAMhoLlj1eEjG3w3xtCSP7CF-JDTuCr4lU04-dpdpGtGiM00RHnpUhQ4CJbegiGh5FjMrFY39S1iO5nfpYYHlxNeg0Rto1XobRmTgh3AgCn6XKe2PSeYnubAJ4kB8tlfJVoT9HhTRwHN4QMZ6vsBlCE_NuwWLsC7BDMLamSqdEyTRUQn_RfhpFWGNTpvyFQpJiP8bU8MXlXNZD665cVY5JEuKUGnHGcMOi644shE_-AUJJlI1DCS_renQMRzPZ3Wjo5aUzHeZP4DGGRMqPuUZ2YMO5o3k9kT_zaZI5oodByKu3oEKgWZzODyfEL5O7xo9nZ3XfqNVEpS-qWvVBVokjqEjVT0omLYy9YfsPyAcx9m6wa1SEJnZ47v7zFPCa5db52O4qnbJv4FG-CHVqIobIFIShJGtQ8pqljzy51Ddv3BYYTvGmCv4UHis7J8ZXsbbJJZ9yGDi88YGuQyRFHIJdxxtgkFCDV4B8TCGLFSV11kX86JdxDIJsjxfoPAQqtR1T6QCtmMHeX3GLNAO6XWC0z6bin0FxHcQa0kxFsJIqUOmE7v07o9fYhAwWiWHOXVCpFQoH--hEjHYmd-VIVUdjJA1pg0Ls1iVnUPjDmiRxla9t5PKWvIoT53YZJ7HSodG5NFudth2vboT4vK1RRfudog8YJdXoTT-hbRuwqUUdZcWV52uHymZNh5SbZ6JtIGF_0CmOl1YniiAK42jO7DTKqGzKWzrwl1U3O9fViJCcrEi8Ayde5PpXlC3JxTQsqHmuRWowqD9b8Yy_u0kUFnbJnlNS7SoQGZZCvhQ8KEImtnqrILXlBENquZIGy2L6Ni189z7SO6NE5sAVhMuTafFLGtVv7UWjWWVR9o53-XnyEzFOrA6icRmV7CNMZOLRcySZ23VtH4tEpdMNBGBm3hgumYm_lge14eTlqRM7lfV9r2Ds1NvRJk5ujggF_TRt2U_iV48iARNFPVOWkfgqXiHUnvhVo32jAFZmU_IgPe89sxKpMCGQVZjRwV8nfj4v0XJo0tUfRWhIoyTN4WVNdiFrwVlM8aALJfEnfQHPovl5gukF3pYrdM1b2Y1y5ICYu257nDLS29q3vzgG0oB4TuVfhyxSLpzeNs4Pz8-o_h40tPpFfZ5u5nW0BVK2succVOppSIpIayPvdirheHcv7BGPYE2IFS5ef4zQ61TUg-mMQdxl_ZDsjzawM5Mgdjp2v_zjuTaZGMn5Sz71-9hnCJFKoZLXYyi6-28X7Yncx6SDbb7iCXomOsBbnfPM3Owia0iCZUVeTmZpg0DdRe6zgmtYC7yWPtLwvkkK22Xpqquw=w1136-h951" class="active" id="_1">
+                        <div id="buffer-box">Bienvenido</div>
+                    </div>
+                    <div id="player-controls">
+                        <div class="control controls-block" style="display: block;">
+                        <div class="button" id="play-previous">
+                            <i class="fas fa-backward"></i>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <div class="button" id="play-pause-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        </div>
+                        <div class="control" style="display: block;">
+                        <div class="button" id="play-next">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <button id="playButton">Reproducir</button>
+            <audio id="player" src="https://doc-0s-1c-docs.googleusercontent.com/docs/securesc/3ndgmg30f3fg6pre99j9ria49clrnkg8/ntltr65v4sl7oe2ut350ef47edm3indl/1676175750000/00871116392438482617/00871116392438482617/11es4yyTllcEfpwF01G2ZxE_QbtlEQi3h?e=download&ax=AB85Z1BaQLNyRq9bRnISuYDusEx6amaEkOcsq9CtsVZzvG2rERs6lDPUMg_DYz0esxSFu0eds4Y292Y9fn6XtfWMu7CgIOk6E4V8L5QwQagfcCOcZ0ohzlSGkFUcG7iR3ZWvdlTLBsTXNHtvtYa4_4wlDrQyUzfsS643fXKz5n9s_8XJI_6P8N47lGn_xPJDrV-LQ9hbPZHSBGEju-2k5E6EYW1ptH2gRoPoodC3r0U51Ls-cuTfH2yJ1e3CS5r-HfqZZ9jdTCshdiR_-GJsGOCJC5ofeqAZJUzL61RmhTE3GvAdwkZb36uG91WhvljFCNakKWb0fEB_1ZZ9PsQAMuztObJhQ2h1HiZ_A0YLvD7ee0t5z9VLWFNRz4JSK0mjiUoujnVNoGiFihKYhLSUzijItVoJpWhoTanO2PXeGPBfSMGhZZ7dccueCgLrKid1n1WV0g0S8N9KjxIIkVlXZPpUdnEnE82k4FlmC8iXnZaZipxu7Kyi-gtGJXGI--SHMVxvvvvk26VOhPNki3JIHzX-uwpXvZguTBpoUVdf_n-8gydlGENQH-ob-53H3p9j95AUXVdCdg6azlG60C6BtRRPIO6hA2trPefFpbkPj09O3PngZl67hPr4bdPTFa4X1JKuCv1BkrkPa5iA4vLjGVej6dvAAjxz0WbsNIX6GK7QqZdJHDh02IMT-jmR010TpIKl3S0IKh4NwHGttJ-RqvX_Vj00PYGuJnhiIcy9XMwxPjjigTZXcBH-V_BCE7A9ouuWWPfVu-SAO6Ogbc8bwiuDtzm44mH9QKRCwWJOMXbFTZ1_hVSaH3ZRkD6GGdGSlnCNhajZquKFITORQ0nXhaAuDlZcOM32C_m_xZAzpy8fgG2RRuqfDRRfj_QIyn7HhbV5IJhTzlSmTcbbkKkFfK7HSchbBqxJVSH0Uvf7oDl90hceMOfksjsjX5VDQTWbRXFVXN8Pr4FdsLHm2C6EfuttWlZoLJnWV0J-CAv7vE32d92L&uuid=e9007d7c-b4b8-4523-97a0-b871fe48b492&authuser=0"></audio>
+            <div id="controls">
+                <!-- <button id="playButton">Reproducir</button> -->
+                <!-- <div id="progressBar">
+                  <div id="progress"></div>
+                </div> -->
+                <button id="muteButton">Silenciar</button>
+              </div>
             <h2 class="titulo-historia">Esta historia comenzó en el año 2011</h2>
             <p class="historia">
               Nos conocimos de la manera
@@ -734,6 +784,363 @@ font-family: 'Roboto Slab', serif; */
             <!-- Subir fotos a redes sociales -->
 
 
+            
+                
+                
+                
+                
+
+                <!-- <div id="app-cover">
+                    <div id="player">
+                        <div id="player-track">
+                        <div id="album-name"></div>
+                        <div id="track-name"></div>
+                        <div id="track-time">
+                            <div id="current-time"></div>
+                            <div id="track-length"></div>
+                        </div>
+                        <div id="s-area">
+                            <div id="ins-time"></div>
+                            <div id="s-hover"></div>
+                            <div id="seek-bar"></div>
+                        </div>
+                        </div>
+                        <div id="player-content">
+                        <div id="album-art">
+                            <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
+                            <div id="buffer-box">Bienvenido</div>
+                        </div>
+                        <div id="player-controls">
+                            <div class="control controls-block" style="display: block;">
+                            <div class="button" id="play-previous">
+                                <i class="fas fa-backward"></i>
+                            </div>
+                            </div>
+                            <div class="control">
+                            <div class="button" id="play-pause-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            </div>
+                            <div class="control" style="display: block;">
+                            <div class="button" id="play-next">
+                                <i class="fas fa-forward"></i>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+            <style>
+                *:focus {
+  outline: none;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  margin: 0;
+  /* background-color: #ffeff5; */
+}
+
+#app-cover {
+  width: 430px;
+  height: 100px;
+  margin: -4px auto;
+}
+
+#bg-artwork {
+  position: fixed;
+  top: -30px;
+  right: -30px;
+  bottom: -30px;
+  left: -30px;
+  /* background-image: url("https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  z-index: 1;
+}
+
+#bg-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background-color: #fff; */
+  opacity: 0.51;
+  z-index: 2;
+}
+
+#player {
+  position: relative;
+  height: 100%;
+  z-index: 3;
+}
+
+#player-track {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  left: 15px;
+  padding: 13px 22px 10px 184px;
+  /* background-color: #fff7f7; */
+  border-radius: 15px 15px 0 0;
+  transition: 0.3s ease top;
+  z-index: 1;
+}
+
+#player-track.active {
+  top: -92px;
+}
+
+#album-name {
+  color: #ffff;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#track-name {
+  color: #ffff;
+  font-size: 13px;
+  margin: 2px 0 13px 0;
+}
+
+#track-time {
+  height: 12px;
+  margin-bottom: 3px;
+  overflow: hidden;
+}
+
+#current-time {
+  float: left;
+}
+
+#track-length {
+  float: right;
+}
+
+#current-time,
+#track-length {
+  color: transparent;
+  font-size: 11px;
+  background-color: #ffe8ee;
+  border-radius: 10px;
+  transition: 0.3s ease all;
+}
+
+#track-time.active #current-time,
+#track-time.active #track-length {
+  color: #f86d92;
+  background-color: transparent;
+}
+
+#s-area,
+#seek-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 4px;
+}
+
+#s-area {
+  background-color: #ffe8ee;
+  cursor: pointer;
+}
+
+#ins-time {
+  position: absolute;
+  top: -29px;
+  color: #fff;
+  font-size: 12px;
+  white-space: pre;
+  padding: 5px 6px;
+  border-radius: 4px;
+  display: none;
+}
+
+#s-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: 2;
+}
+
+#ins-time,
+#s-hover {
+  background-color: #3b3d50;
+}
+
+#seek-bar {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: #fd6d94;
+  transition: 0.2s ease width;
+  z-index: 1;
+}
+
+#player-content {
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 30px 80px #656565;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#album-art {
+  position: absolute;
+  top: -40px;
+  width: 115px;
+  height: 115px;
+  margin-left: 40px;
+  transform: rotateZ(0);
+  transition: 0.3s ease all;
+  box-shadow: 0 0 0 10px #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#album-art.active {
+  top: -60px;
+  box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+}
+
+#album-art:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: -10px auto 0 auto;
+  background-color: #d6dee7;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #fff;
+  z-index: 2;
+}
+
+#album-art img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+#album-art img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+#album-art.active img.active {
+  z-index: 1;
+  animation: rotateAlbumArt 3s linear 0s infinite forwards;
+}
+
+@keyframes rotateAlbumArt {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#buffer-box {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 13px;
+  color: #ffff;
+  font-size: 13px;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px;
+  margin: -12px auto 0 auto;
+  background-color: rgba(0, 0, 0, 0.575);
+  opacity: 0;
+  z-index: 2;
+}
+
+#album-art img,
+#buffer-box {
+  transition: 0.1s linear all;
+}
+
+#album-art.buffering img {
+  opacity: 0.25;
+}
+
+#album-art.buffering img.active {
+  opacity: 0.8;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+#album-art.buffering #buffer-box {
+  opacity: 1;
+}
+
+#player-controls {
+  width: 250px;
+  height: 100%;
+  margin: 0 5px 0 141px;
+  float: right;
+  overflow: hidden;
+}
+
+.control {
+  width: 33.333%;
+  float: left;
+  padding: 12px 0;
+}
+
+.button {
+  width: 26px;
+  height: 26px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button i {
+  display: block;
+  color: #d6dee7;
+  font-size: 26px;
+  text-align: center;
+  line-height: 1;
+}
+
+.button,
+.button i {
+  transition: 0.2s ease all;
+}
+
+.button:hover {
+  background-color: #d6d6de;
+}
+
+.button:hover i {
+  color: #fff;
+}
+
+            </style>
 
 
 
@@ -892,4 +1299,5 @@ font-family: 'Roboto Slab', serif; */
     </script>
   </body>
   <script src="js/script.js"></script>
+  <script src="js/script-prueba.js"></script>
 </html>
