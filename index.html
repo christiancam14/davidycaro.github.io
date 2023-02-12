@@ -896,14 +896,24 @@ body {
   top: -92px;
 }
 
+#player-track.active #album-name,
+#player-track.active #track-name,
+#player-track.active #track-time{
+    color: #ffff;
+}
+
+#player-track.active #s-area{
+        background-color: #ffff;
+}
+
 #album-name {
-  color: #ffff;
+  color: #0000;
   font-size: 17px;
   font-weight: bold;
 }
 
 #track-name {
-  color: #ffff;
+  color: #0000;
   font-size: 13px;
   margin: 2px 0 13px 0;
 }
@@ -926,7 +936,7 @@ body {
 #track-length {
   color: transparent;
   font-size: 11px;
-  background-color: #ffe8ee;
+  background-color: #ffff;
   border-radius: 10px;
   transition: 0.3s ease all;
 }
@@ -945,7 +955,7 @@ body {
 }
 
 #s-area {
-  background-color: #ffe8ee;
+  background-color: #0000;
   cursor: pointer;
 }
 
@@ -989,8 +999,9 @@ body {
 #player-content {
   position: relative;
   height: 100%;
-  background-color: #fff;
-  box-shadow: 0 30px 80px #656565;
+  background-color: #0000;
+  border: 1px solid white;
+  box-shadow: 0px 0px 40px #656565;
   border-radius: 15px;
   z-index: 2;
 }
