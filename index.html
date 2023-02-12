@@ -307,14 +307,14 @@ font-family: 'Roboto Slab', serif; */
         }
 
         #app-cover{
-            transform: scale(0.7) translateX(-13%);
+            transform: scale(0.7) translateX(0);
             margin: -20px auto 0px !important;
         }
 
         #app-cover:has(#album-art.active) {
             width: 430px;
             height: 190px;
-            margin: 50px auto 0px !important;
+            margin: 60px auto 0px !important;
         }
 
         .contenedor-img-principal .descripcion {
@@ -374,6 +374,14 @@ font-family: 'Roboto Slab', serif; */
         .container-paj-dos{
             top: 160px;
             transform: translateX(-50px) scale(0.8) !important; 
+        }
+
+        .clic-musica{
+            margin-bottom: 5px;
+        }
+
+        .flecha-musica{
+            margin-bottom: 10px;
         }
 
       }
@@ -518,6 +526,7 @@ font-family: 'Roboto Slab', serif; */
         display: flex;
         justify-content: space-between;
       }
+
 
       #progressBar {
         width: 100%;
@@ -789,8 +798,10 @@ font-family: 'Roboto Slab', serif; */
                 Nuestra boda
                 <br />
                 <span> Junio 10 </span>
-              </p>
-            </div>
+            </p>
+            <p class="clic-musica">Haz clic aquí</p>
+            <p class="flecha-musica"><i class="fa fa-arrow-down"></i></p>
+        </div>
 
             <!-- Botón de reproducir música -->
             <div id="app-cover">
