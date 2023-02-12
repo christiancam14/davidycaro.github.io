@@ -111,7 +111,6 @@ function updateCurrTime() {
     // const audio = new Audio("https://github.com/christiancam14/davidycaro.github.io/raw/master/te-voy-a-amar.mp3");
     let curMinutes = Math.floor(audio.currentTime / 60);
     let curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
-    console.log(audio.currentTime);
     
     let durMinutes = Math.floor(audio.duration / 60);
     let durSeconds = Math.floor(audio.duration - durMinutes * 60);
