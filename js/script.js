@@ -39,22 +39,3 @@ var x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "¡Nuestra boda comenzó!";
   }
 }, 1000);
-
-// Funcion para animacion de contenido   
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-  
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 20;
-    
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", reveal);
