@@ -300,7 +300,7 @@ font-family: 'Roboto Slab', serif; */
         #app-cover:has(#album-art.active) {
             width: 430px;
             height: 190px;
-            margin: 140px auto 0px !important;
+            margin: 50px auto 0px !important;
         }
 
         .contenedor-img-principal .descripcion {
@@ -349,6 +349,14 @@ font-family: 'Roboto Slab', serif; */
             transform: scale(1);
         }
         
+        #album-name{
+            font-size: 24px;
+        }
+
+        #track-name{
+            font-size: 17px;
+        }
+
       }
 
       /* CARRUSEL -------------------------------- */
@@ -838,7 +846,7 @@ font-family: 'Roboto Slab', serif; */
                 margin: 140px auto 0px;
               }
 
-              #app-cover:has(#album-art.active) .button i{
+              #app-cover:has(#album-art.active) .button:not(#play-pause-button) i{
                 animation: pulse-black 1.725s infinite ease-out;
               }
 
@@ -1031,7 +1039,7 @@ font-family: 'Roboto Slab', serif; */
 
               #album-art.active {
                 top: -130px;
-                box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+                box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c100;
                 animation-play-state: running;
                 opacity: 1;
               }
