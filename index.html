@@ -525,6 +525,23 @@ font-family: 'Roboto Slab', serif; */
         }
       }
 
+      	
+        @keyframes pulse-black {
+            0% {
+                transform: scale(.95);
+                text-shadow:  0 0 0 rgba(255, 217, 0, 0.7);
+                color: rgba(255, 217, 0, 0.112);
+            }
+            70% {
+                transform: scale(1);
+                text-shadow:  0 0 10px rgba(0, 0, 0, 0);
+            }
+            100% {
+                transform: scale(.95);
+                text-shadow:  0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
       @-webkit-keyframes spin {
         from {
           -webkit-transform: rotateY(0deg);
@@ -618,7 +635,7 @@ font-family: 'Roboto Slab', serif; */
             <!-- Botón de reproducir música -->
             <div id="app-cover">
               <div id="player">
-                <div id="player-track">
+                <!-- <div id="player-track">
                   <div id="album-name"></div>
                   <div id="track-name"></div>
                   <div id="track-time">
@@ -630,7 +647,7 @@ font-family: 'Roboto Slab', serif; */
                     <div id="s-hover"></div>
                     <div id="seek-bar"></div>
                   </div>
-                </div>
+                </div> -->
                 <div id="player-content">
                   <div id="album-art">
                     <img
@@ -643,7 +660,7 @@ font-family: 'Roboto Slab', serif; */
                   <div id="player-controls">
                     <div class="control controls-block" style="display: block">
                       <div class="button" id="play-previous">
-                        <i class="fas fa-backward"></i>
+                        <i class="fa fa-heartbeat"></i>
                       </div>
                     </div>
                     <div class="control">
@@ -653,10 +670,27 @@ font-family: 'Roboto Slab', serif; */
                     </div>
                     <div class="control" style="display: block">
                       <div class="button" id="play-next">
-                        <i class="fas fa-forward"></i>
+                        <i class="fa fa-heartbeat"></i>
                       </div>
                     </div>
                   </div>
+
+
+                  <div id="player-track">
+                    <div id="album-name"></div>
+                    <div id="track-name"></div>
+                    <div id="track-time">
+                      <div id="current-time"></div>
+                      <div id="track-length"></div>
+                    </div>
+                    <div id="s-area">
+                      <div id="ins-time"></div>
+                      <div id="s-hover"></div>
+                      <div id="seek-bar"></div>
+                    </div>
+                  </div>
+
+
                 </div>
               </div>
             </div>
@@ -788,8 +822,21 @@ font-family: 'Roboto Slab', serif; */
               #app-cover {
                 width: 430px;
                 height: 100px;
-                margin: 60px auto 0px;
+                margin: 0px auto 0px;
+                transition: all 0.25s linear;
               }
+
+              #app-cover:has(#album-art.active) {
+                width: 430px;
+                height: 190px;
+                margin: 140px auto 0px;
+              }
+
+              #app-cover:has(#album-art.active) .button i{
+                animation: pulse-black 1.725s infinite ease-out;
+              }
+
+              /* animation: pulse-black 2s infinite ease-out; */
 
               #bg-artwork {
                 position: fixed;
@@ -824,11 +871,11 @@ font-family: 'Roboto Slab', serif; */
               }
 
               #player-track {
-                position: absolute;
-                top: 0;
+                /* position: absolute; */
+                /* top: 0;
                 right: 15px;
-                left: 15px;
-                padding: 13px 22px 10px 184px;
+                left: 15px; */
+                /* padding: 13px 22px 10px 184px; */
                 /* background-color: #fff7f7; */
                 border-radius: 15px 15px 0 0;
                 transition: 0.3s ease top;
@@ -837,6 +884,12 @@ font-family: 'Roboto Slab', serif; */
 
               #player-track.active {
                 top: -92px;
+                margin-bottom: 16px;
+                transition: opacity 0.3s ease ;
+              }
+
+              #player-track:not(.active) {
+                opacity: 0;
               }
 
               #player-track.active #album-name,
@@ -948,6 +1001,9 @@ font-family: 'Roboto Slab', serif; */
                 box-shadow: 0px 0px 18px #656565;
                 border-radius: 15px;
                 z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
               }
 
               #album-art {
@@ -955,17 +1011,23 @@ font-family: 'Roboto Slab', serif; */
                 top: -40px;
                 width: 115px;
                 height: 115px;
-                margin-left: 40px;
+                /* margin-left: 40px; */
                 transform: rotateZ(0);
                 transition: 0.3s ease all;
                 box-shadow: 0 0 0 10px #fff;
                 border-radius: 50%;
                 overflow: hidden;
+                animation: spin-img 5s linear infinite paused;
+                -moz-animation: spin-img 5s linear infinite paused;
+                -webkit-animation: spin-img 5s linear infinite paused;
+                opacity: 0;
               }
 
               #album-art.active {
-                top: -60px;
+                top: -130px;
                 box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+                animation-play-state: running;
+                opacity: 1;
               }
 
               #album-art:before {
@@ -1013,6 +1075,13 @@ font-family: 'Roboto Slab', serif; */
                 }
               }
 
+              @keyframes spin-img {
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+
               #buffer-box {
                 position: absolute;
                 top: 50%;
@@ -1054,9 +1123,11 @@ font-family: 'Roboto Slab', serif; */
               #player-controls {
                 width: 250px;
                 height: 100%;
-                margin: 0 5px 0 141px;
-                float: right;
-                overflow: hidden;
+                /* margin: 0 5px 0 141px; */
+                margin: 0 auto 0;
+                z-index: 2;
+                /* float: right; */
+                /* overflow: hidden; */
               }
 
               .control {
