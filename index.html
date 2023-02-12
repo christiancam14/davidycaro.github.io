@@ -120,12 +120,12 @@ font-family: 'Roboto Slab', serif; */
       .contenedor-img-principal .titulo-imagen {
         top: -20px;
         text-align: center;
-        margin: 0 auto;
+        margin: -180px auto 40px;
         font-size: 80px;
         font-weight: 600;
         font-family: "Courgette", cursive;
         font-family: "Explora", cursive;
-        text-shadow: black 0.1em 0em 0.1em;
+        text-shadow: black 2px 2px 18px, #ffff 2px 2px 18px;
         z-index: 2;
         color: var(--border-color);
       }
@@ -158,10 +158,11 @@ font-family: 'Roboto Slab', serif; */
       }
 
       .contenedor-img-principal .img-david-carito {
-        width: 60%;
+        width: 30%;
         border-radius: 50%;
-        filter: drop-shadow(0 0px 10px rgba(224, 203, 137, 0.7));
+        filter: drop-shadow(0 0px 10px #ffff);
         transition: all 0.25s linear;
+        animation:  foto-pulso 3s linear infinite;
       }
 
       .contenedor-img-principal .img-david-carito:hover {
@@ -271,6 +272,8 @@ font-family: 'Roboto Slab', serif; */
           position: inherit;
           font-size: 48px;
           font-weight: bolder;
+          margin-top: -70px;
+
         }
 
         #app-cover{
@@ -494,22 +497,15 @@ font-family: 'Roboto Slab', serif; */
       }
 
       /* La animación para las luciernagas */
-      @keyframes firefly {
+      @keyframes foto-pulso {
         0% {
-          transform: translate(-50%, -50%) scale(0);
-          opacity: 0;
+            filter: drop-shadow(0 0px 10px #ffff);
         }
         20% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 1;
-        }
-        80% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 1;
+            filter: drop-shadow(0 0px 25px #ffd90050);
         }
         100% {
-          transform: translate(-50%, -50%) scale(0);
-          opacity: 0;
+            filter: drop-shadow(0 0px 10px #ffff);
         }
       }
 
