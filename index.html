@@ -2,19 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boda David y Carito</title>
-    <link rel="icon" type="image/x-icon" href="https://www.esneca.com/wp-content/uploads/como-organizar-una-boda-1200x900.jpg"/>
-    <!-- <link rel="stylesheet" href="/index.css" /> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jura:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap&family=Explora&display=swap&family=Courgette"
-      rel="stylesheet"
-    />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Courgette&family=EB+Garamond&family=Jura:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <title>3D Carousel</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
       :root {
         --border-color: linear-gradient(
           to right,
@@ -28,22 +24,18 @@
       /* font-family: 'EB Garamond', serif;
 font-family: 'Roboto Slab', serif; */
 
-      body {
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-        background-color: #000000;
-        box-sizing: border-box;
-        color: #ffff;
-        font-family: "Poppins", sans-serif;
-      }
-
-      body::-webkit-scrollbar {
-        display: none;
-      }
-
-      .contenedor-1200 {
-        width: 90%;
+    body {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      background-color: #000000;
+      box-sizing: border-box;
+      color: #ffff;
+      font-family: "Poppins", sans-serif;
+    }    body::-webkit-scrollbar {
+      display: none;
+    }    .contenedor-1200 {
+      width: 90%;
         max-width: 1200px;
         padding: 20px;
         margin: 10px auto;
@@ -150,7 +142,7 @@ font-family: 'Roboto Slab', serif; */
       }
 
       .historia {
-        max-width: 95%;
+        max-width: 40%;
         text-align: center;
         margin: 0 auto;
       }
@@ -286,6 +278,12 @@ font-family: 'Roboto Slab', serif; */
             margin: 0 auto 20px;
         }
         
+        .historia {
+            max-width: 95%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
         #countdown{
             transform: scale(0.8);
         }
@@ -296,6 +294,145 @@ font-family: 'Roboto Slab', serif; */
 
         .como-llegar{
             margin-bottom: 0px;
+        }
+      }
+
+
+
+
+      /* CARRUSEL -------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* touch-action: none; */
+      }
+
+      .seccion-carrusel {
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        min-height: 500px;
+        margin-top: -115px;
+        background: #0000;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      #drag-container,
+      #spin-container {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: auto;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform: rotateX(-10deg);
+        transform: rotateX(-10deg);
+      }
+
+      #drag-container img,
+      #drag-container video {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        font-size: 50px;
+        text-align: center;
+        -webkit-box-shadow: 0 0 8px #fff;
+        box-shadow: 0 0 8px #fff;
+        -webkit-box-reflect: below 10px
+          linear-gradient(transparent, transparent, #0005);
+      }
+
+      #drag-container img:hover,
+      #drag-container video:hover {
+        -webkit-box-shadow: 0 0 15px #fffd;
+        box-shadow: 0 0 15px #fffd;
+        -webkit-box-reflect: below 10px
+          linear-gradient(transparent, transparent, #0007);
+      }
+
+      #drag-container p {
+        font-family: Serif;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+        transform: translate(-50%, -50%) rotateX(90deg);
+        color: #fff;
+      }
+
+      #ground {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+        transform: translate(-50%, -50%) rotateX(90deg);
+        background: -webkit-radial-gradient(
+          center center,
+          farthest-side,
+          #9993,
+          transparent
+        );
+      }
+
+      #music-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      @-webkit-keyframes spin {
+        from {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+        }
+        to {
+          -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+        }
+      }
+
+      @keyframes spin {
+        from {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+        }
+        to {
+          -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+        }
+      }
+      @-webkit-keyframes spinRevert {
+        from {
+          -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+        }
+        to {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+        }
+      }
+      @keyframes spinRevert {
+        from {
+          -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+        }
+        to {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
         }
       }
 
@@ -312,7 +449,9 @@ font-family: 'Roboto Slab', serif; */
       }
     </style>
   </head>
+
   <body>
+    
     <article class="contenedor-1200">
       <div class="card">
         <div class="card-body">
@@ -366,17 +505,55 @@ font-family: 'Roboto Slab', serif; */
             </button>
             <!-- Botón de reproducir música -->
             <p>Dale play aquí</p>
-            <h2>Nos conocimos el</h2>
+            <h2>Esta historia comenzó</h2>
             <p class="historia">
-              Esta historia comenzó en el año 2011 nos conocimos de la manera
-              más inesperada, para nosotros casualidad, para Dios causalidad.
+              en el año 2011. Nos conocimos de la manera
+              más inesperada, para nosotros casualidad, para Dios causalidad. <br><br>
               Hoy 12 años después tenemos un hogar que hemos construido con
               esfuerzo y dedicación el cual queremos conservar hasta que Dios lo
-              permita y por eso hemos decidido unir nuestras vidas ante Dios...
+              permita y por eso hemos decidido unir nuestras vidas ante Dios...<br><br>
               Y es un privilegio celebrar el amor que nos une y nos ha motivado
               a seguir construyendo esta linda historia de la cual queremos seas
-              parte...
+              parte...<br><br>
             </p>
+
+            <section class="seccion-carrusel">
+              <div id="drag-container">
+                <div id="spin-container">
+                  <!-- Add your images (or video) here -->
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemeuYqG7I8M6xH4KKo8f0RI2ALdGIpsVlvzRxhxF8Bpu_zlM99rkZaUjPoixlUayHtxIb5XWfTwzTsW0fe7iaKct2aH5VgvHZLALJFhKhtvwn1v5Hm4-VK5vbS3mDb4xzK0tTkNRXi1VAZJBYqmqPr_6OgqCmWe1iPwNbe0ksmwVHdLzCSmizzsOH7PWqsvIYum1XVu2sjr1_gZvtb3M0oJLSNnwoh-jXt1w5wm3e6aegGLYuukBVHHvp99N9uxp9CAVWEG8OLL9r0q-Ixplx34moPSws9S3jp7YIaSL9YyT83PvOw77TexmEVJbfP_7YBwMO3Ih6i9e6WVwJoHRqs8jFOaCZmxFPcsrFgwJJD6XHAdZkrNg7ZihWe-LYoXcmHiM9U1h5NHemSDUK1uhetCLWhCm4gqulsclzAmwIDmKMrHtUdTsObA78YR0KmtSXec6Z_ra_GLQ36B2bkUIhN8ZNB1SOfWtq3ib9Y4pYD7q9suOHsM3Dixef0xSE5kV9HhAHijTNKrdscZVfZfj6VSKrCHe5JaKeIg0sa5lnSE3YDTbUL9DaqngKj7JMnEGmk-lVtE8LD4cFhIyiRUjSR0YTRJNmIDrkyryZIk1ozQwrjeQC1lSWTwjeGgWr0PNEfxYybReUeEpZx_QH5ic7SHybSLABZg3Oz229OsVF5ynZWkAAj2tJxXkfR_6fB-mXtQXK6gkjTKng7SfTJSf4Me0PdJNz8f6YrjO3AJMoK87IaQWEcQ6nm-6LGJQndle4gNmaDnKJbrKtqn4n5zxTr3G16ItzBTuv2sEQszjiCJawryAtILU8RThT1vzlxYifrdaogZD0Da0dK_i0KLmq_BjpYePLlD9ykDamPbIUKebIXBHqtpTpPw9xu8qBTlzmTiH2W7vcfrvvUwyiY-JUy2xdK4SbEgzlfDYpKnmfhASKJlLQeu2zcoapbJfWBfnKGRH2LiExSRP3w5dQPx4ffoigSNJ_baetQCFv2mQuDmP4T6-4mIFI8h97zZPe_kkmrzXx31guO8mXG-NWW_V6elR48p88qByWSEfrF7VD0MmhbQBcLYUUys1Hr4sjElT-kQ_uIMePHgF1CWHdsAzh1D-xGk-og-OtA9UcIciXdBwUsi-tFjt3OasU4TS39dFWBub8dfEFNDpkhbXYBC6uAvolgpjwcIuJSH0dyDFAUBC3ARZ06Hf16YBvLzDlGaTxbhXVkZHkeNUAnrR8vi_civ9Qvxi5N2i-PpQDVsXBDxwn3Rhvcs8uCsHnPeamnBs3ZzzoowUtgWDZwrf1mvbXy0-Fxl66E5kopOKHhDlIu-jXJMlxLRPPtmaaUMaDG0eQg2IkNJdWeTklLFaPGPLhQEuT8P96jAtj4Xas6qKCvlDS0PUf88nqBReyQ5P8NsU71SQWTOEpfqyrRgpw7uNBTSr9_1B17hAvGl48ZGuodI5rFS43k3due8vAky-of8Ok8Zbn21Tahxd-6l8sNzGPGV_okOZmvH339CRsl1SLsTDvlhqFCXE2peAl7vy36scyXNJVYPrHLaEgl4wpXT8i8Ar-Vr4wTubwPtFPMqnf9i79tb6rN0kkzgWUFXp2U_Tug=w1278-h951"
+                    alt=""
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemd8if-hU8BofXS8G1-h2KRsSgF__UM6R0AgJaWh8pOJ0u3VrGyEjxe8IbHUQNDWQkLAsIdurv3CTnlXMQiTxLnoZ9GhOElU939LHzUkg7belXu8vN1hzMWCoWs_Uoxx8kS2nnhBkskSrdICa-DcH5VOAEewmxSN0YgONGfb6nXyS5SqznOlIq_rlel5EscgK3Gt4W0uwCO9X4S_wlbWZ0KqMLxAid60mfvJ7ch9sHiigG1eoKmR_zTctHCH88dA1MrRijd3vree8vN-V2aTofPF0x07A-s17LXttdvpvK1CT0AVntcMuA7l0hZ-u6gZ9xYi62DEKFQiSW8GM0bjNIqS6r_TGQSuFmeDHhW3FJDSPsk77OQoy3BO_b8m2XaQq4Yd5lbOkL0R3rBoFJGbZgA9StEYxTpI20ony2AObKjJlLBcW8Lt37q1KDttNc7lq8YRHYioEofJZetXzmnAtBg4x2Oz2XlP3esX5qgf6T8wIrp93inknEg--lEVlJzLAQbJeaU7cOoINuN0Ghl8pg7uZwagSDbbFeZEC3H3h07Zruy-lHI1RBZIK8mJX_oexCD1F8zvYHLAWTNnDfPfMTNslPdBR_w56M_XvoJLlZQdlIunZyD7zmvTHnuB_tG0uCD86Y7qgYTMZUewksG6EeS2S9mNesg4uTXd7UpJBh4Jf2f3H1BA8GzlCvU7kJhxufSfv9kt-2gTevZyOufD-zdp2LLZX8uEcqiU-rElCxlI1BPAU6jgy6KUVuMJLSCsk-sMRreI1YJl5VPNPpA-cOwUVphNY4QpZXoDRk6_F6wPiZaqsexbTKXZdwVAWP9Gp1hhv-5HWYq7vYjLYP18RrnnkqNa6HmXLD2OhjXdbl7J0ESGcRcQwoY3Osym6Bg4H8wEEBLuQIChiTAQRP6lRaNwbruHHPd44bnvVk0yukKm4m8jPwJCLUU_NqyQImp8volEGMjMvt--3SxzqYplHVROH0l5Io1TqdeghoAgxRI9BvJaELaS9O74JN3GeqQqjwmW3ELRviZEMuObQarcxCyEqzqevZklrmzeBWZQv9v7d7anHllN_U8_3ajJeHedpTY2MhISsgbvV9uq6KQ-His_fL5aYBR64v_FpCLmkxwI6qarElPc4t79uehUwX7JxlCofXo6TnkoOk8wo1DO-Bw2P153Aj7eZGxVnkESe-hqhc4tsDOIQnmw-sJwYns0WpOxjAWhWdqpIWXymm0KFJM5ZiZSAXEIUXwyFpQ9cL3BTgbyZ3fBAx2ariKk_H5tfKJFltis-Oh1CjZGpnov6AAFYn3oZrB4eTSOd5sdFp9nDjPdhgXnUA_qBvIFtvRYkJt5FwmdJgSXDyz8-yOp82UG7pA2QwS5-HxqDI0cSph2lw5lhJ9SJ4pzKD-a9qrUEm48Zi6pmej7ffMPz6mCPUaFkrcpf00OZgk7xqERy2Lf9w2j0-n_oEuZTj5BeqLXYMhKuzWvKCMkMzPytxt_VjeiuyOqIpOC1tBMfoRh32YjtUq72h-Afbg5ekms5idF2Qr_i9-lohj4r6abp7t6OFqPONiMhyzclS5al6IKExFB3lvcZ_RVbGlmuFpobZOSwA=w1278-h951"
+                    alt=""
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemcvOzUcsR3ImdLzj62KPag1YcYiWBsVhL8bXpVIKdEmbUZG2514_Eo4ZAAreNdoSmCyL2yCLfsQ6tmSlU_aFg1Yl9sunINaowqPcYaO253sX0V_o0HzJNL6hhBXSfWXS6T9H7eIXevItP_kHoLlvya8nB74Du3xTWhWuuh4cEbKyvs6kkv3w7FgjpbLgcgwIQwJFVJI2sIvk_RLcowq4BDk81Puu1OTxuUo_JeMaAe3z1HGwoY2cbEXLxAF2_xToeDf_OTvuqBc9sfNv0TXCTUdknEQTTNEUOeIAtqVoir55I87i4l_SsImGQ87DwbzoEPeaiuj1Q_iX-TiwmfRaJVVRgvM4L8cIX7vCSy1o-FEMupOLxtLqseSbprP7Wc4_mkC3hnaJMXzn--GK7A0nX2ETc3oaw_nEsdrQwHqq70JwtvkOpYeWOXW59n4VOYuiQv6jIFTnrDnb-PaP5eDiTXcs5Gz0mM2O4iCeRdPcdU0CHfNYBbyxgtcdpABJMeK1uN34Y38Ek1q35Q36DW2Sfu6zj2NDhqrcSglAX_nweDyW8Xjrcz7mBYXE2Dv7N-RkJGsEHBjlDi_0VLvG0kTlKRD3C4kYz-rR3wrCYFJ-cci6bhOBoiVxuSpVyZen5CHc5_gIGuP0fj77cmSIvZu8UQSZVy1uJy30Erk_6VI75HW8aMZqS_LFzXtmhqY76ekJrZqhgXayljvHH7EgYik0PxaeRxGNvWAag2apuG205tnI3Id7sZPQ7uvRTyAgttXGgTmJ1TCKVcgpPZaHStB39LFvSAb-Ryrex83o6ovW5ioNRzEmzgjudVxMcRr5U21IAVg40Q-YJhIJyy92z_RB5Kn85XDLns31oJliMfsAdEkDadpbFnGp20794BVS33Nkk8OG68_3oKGVTsI_F3RgyTyghmxAUybzJpN-xdky_odlurNJWDHZu9rI-I9x5vrSBXEaxJDuuaTm7N9cTBsNS8AYSnIrSeGmH6lj_ir9tKmBQjKMHfqQ_NJ6zTPzu7Rb7jD5IIqSBo_VfSzEwWsirQ2L06hLWXx_uLSrjdapu1tmtPvXC0N9SkTwCN5HrCTUE7W0nSlvRWJoQNF7UlXfPGHQX2hef42tvtPGAdN_dsFlQu4oBR31m08KxUIDzSTaGVOBtgywngoF_3943iL7HPfVJLsmISy9imPiy5gV63WVCy0ZVdBZ20WAdaHQRkk6JijUCItngwoywPC4O5pn-DWwL0rHtE9WtFdwM-63uVBKW87kui1gQqYUHekcj1B78hh3B-l2MIImUs5Nf28HsOv_yf0dH5QcjJDUeQZ0o6tC8AV0C0mIqiAuYb6_dZx-MDHafCmrSX89OU9xB2psYsbAbGnXqerROedt2p1zYIYWCtVMPTHYD56pLB2_DoJU2BwQRBOTb8YAYyNjM3qHi3BBY9zSwuOAb9fxhcHCOvBHPEo7Om-CXE7wVCxxmZwgAhF-hMaAyUKio7xoyfPf7VeYKE3BxsT0VJtxaWmM7j1axF83aYe0mq3ht95nLmbeHB8qMIM7ozEo49oJWGQbyRA3NpXKEapXnAHiINNrMeXtjjTTrE-Y-_RqFIaqwB01Q=w1278-h951"
+                    alt=""
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemfE7DkP_s40oGtehe90KtYzFaipbx6fAEAa7_v7efWvCwedW5yx_YLlF1Z4fCfknHz3hdHsJMacFPSE08OwwhaoistqJ34_TU0wTUTvc8JAiL28SZDcw0D4lZ6_NHv-BMHRvKQyVi7aaaE0A07OyKgBQSaNUnzufxEJOvAswTuotUNtzBhBX29E5ImPel2cBfau3NjbHYaKoMm3E6L9P0rDrRKH-BQXKrEU6_h3KChO8f8TBFFdobBnThsjVAHEsi8GG5bCVfNeDVIZeYS26eM4UH-buIDcInTKor0ZkSqFkYjRZpau1hyhCQ0S2mqeZ0Hhpv07ngR3MAQn5Q7qdTktAclNY1Szq17kiowxml8scSnP7Tg9SjsH5lK8hgZC0NGuTgAA_55dw2VeR0jg76MD6bmvYMlHX5uICrC6s-Vb_Y6_JYS-TP8Su7NoMYK5EKlLM802SWmCmq0KghH49vFdFBttyu4SsgWpXcMptaSEb1KY4_yobmi0TMW2sJZMUxLrhtdFH9t9QCDWP4QiLq0qxjx_Glxr6R5ul2Kne9_EIIp5ihD3NzSfDUKdzIG_I3UxU3WbqqDg-LLc9kx8Qm7aXHUimrzNUTCCu4N8r4odLujaOAcfcqy3f5LpbEj-VGaCjKCtBYlyrKjN8NEX40lW0uBa_6gce-XG6ZGUxWt0wazm9L8pXXi2xXfGaeidtmU8g0PIQgPm3wIS2Xh_RDOC5RUHQYYS9Vb-fe5ztb7eHl_kXlpal9qSQS0VJNTRxj9nOUHHqi5zqHQs9DqK3g3OIRtciqzqRs-NmzRXhO3UjeOdMqAxWk8Eeeh5We0989JaNt24-BEd2ujm8G4Q52dSBeTROJAMnF0Fb46EOqMJgHrBFh73UGHhr0hoYynVRV0vE2KMIuLQO99MWgWCmJm0SybH5qMjq91626HMbvL3-j0F_zIKpk5refIGzyfGRYhzH4e1nE-UZ_DgUwqv0Zzx2CMzR_UoQpMtGXaAt7VhjtQ7sFLE2cuDOwUOqJek6KbT7c_D3SX0nMd76vShQAY-FvtyvOEfX53h8nGP0FYGg8BGf9y_R-1t5BQ_DIb5csHR_VivmNDi1u1gUkUnuDk08jO9SvV-wxdvFcGyD1q5aiuSYjXlTv1QoXb0Z25mcOlGJchtLxTq7PjVRhs5psHHMgiWocU96bQxvATSU8Xyd88WhXRuyRaWc47xMNA1P04QfimUZkBAZcMvPHtb6-MPnngQNTO6fIQRIErss1vZsK1aCk6_MRbRTxPh2HHn_nrFy8JpZOjYnRERLBfBPsOGR1fFTQAbQClDNat9rHOUej61iLyBKQsvvBcJZlTQcCQdYGhZOul2oGGScyMFA-ib2RB7HlENrFAzno1uJUm0rxzoTQACvbYKkRn-Yf0t0XrdAERLtVeq5_iK4XNywZqmLym7uAsJN7jBC-nuqiuIZbpSqz-oXFgKfGUhhkJTre3CPHGv4yhyMYi9d8j0yn9PprUJciXaukNR0SR0cIisZnx41MnqQve22ZmoL9GBLeb5ZA0kIC91NQDFSkhSvh8KCjtE90jSqzlrAVjmGXu42KQFzvo0QjmsqNgtzglMfw=w1278-h951"
+                    alt=""
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemc3IHsxfUYqqC8-XkwEy1Juc0FaK0d2_qXRnTZjDNpTwa3_E8ixxpWZ9tL-FVH_nhw9FuagbRtzludZdS3NMEcy3dFj-h8eunL1DFlQ-YShr_n49ilnLKguOTWnpztrKm1CRJ8qHxLT-erNr4WefgpfgdNxrWe9h-PBE6Kk5hxrheivyCeMtRAQ68YCxMdovSs3SuhL_JVidlzo2xJ_geKHVfc3_AOHFnJO2z3kXkb0R7a2KJGUFK-GM2BH34gqb923n8eZVhLcdQdCPC0oqcsITJ5mY_IPXjn297Xae0a4IkGTktqIMIFkUgUTeFLHu3UGffDGdoqVjFcwvSGOmYB5rH7tzceehFEm6cYTJn2JCJrZV2SeZ9B5zcKZzl1sJdc_H0CxUzCey1mxoRj2LPXb47rqrXr9dFTvhkImm092lL578OlzI0dID0pcDeQqUglM8Akmd32_zr6PHAAWJ9OZLYAh5giE7f0oZsNA92SN-_LPa9WPeexbYp_K1nHODJMwFbUuTJFT_RSx042T6hEqP6Qog6wWEOC0X26abV4yDQv5-sADNIizE4Wt-VN8uNGpSvwfwRK3LkPcxePCceSVAWrk-a4MGUtQ-Sj173mX63NpMYFEMdzvLUBYcdOIj0dK7sRe3WR1-mQ2-H2qcXuycoW1xI0Ya1QwizeH72xBjpMRo1_AnbcdTTIs6VmS4vVScQNiG0lWfq7fdDEtWREMgBBzkrpVoLRPP76m9p7KweN347fu0TKgN_9JqGzdVfIBuFLOOgNDO-664EBKr5Y7Ma_1VLNdBiY4_0hQQ3YygVxX_d5-nf3n6GHp1hesWGp9A4MQZDLW_ailo0eBQBdWespSiQ6J8qALs59OnBozc0a2r7C29FgxFKP5-vWr1S-WIjvrGD1aAbqX-oLoP1wSe0N3Umn-2CxW8bH2f8YaYbGC_d9PzCch3FsRRr6zR1sRU0G5ezmFRx4fSVIiq4y9mAZ6FQ4hi3aVosBLHwCImxuQf7RH3plsdqzNsSnVTu8ucure7YGZL3R1pnMKHS9RJsZ83ZDyfFznbd55MViUwUcXR4CQPavQ_3d7KpmwlBS6RNsFBnojMp0qqvh8vsvqmknHeHMIuiSqwwDPQJGoV35ZeDpYdO-i6qVkQC4saBNIHMQEioy-yS5-yg_AALa1eLOcwek4W99ubuhAxKeo-3rrsXyo-iAhOyjITS9DVmFGLYw2E0pt7zXjTlKTO8ZC2YGAqWciiuYiu6K3Ui-eGCP9NxipT5M3Y9qIHAjzXySkfFAY5UPc8ui9g4XPYaP6GyKmAJ6WQzYkbIvED_zU50HSAXPWoRh9DBYpCRBJrAvTLxRcZwjvG26lje4ASWq7RKioeSE9awFBceTerVWj2CQyn7IeMutA2Al1Lnv2t_GSmW358LAdMqNm65vXm9c5e7h09GqR5bbG7PxR_3rOsgHHRuUV84N7XPJ01Bo-oXA5gC19WJMLdJgv9oTEfAfimYLhAvbq-2VqRb5hR-Xb3-ZKp1jeZjjQwY9kQIHu7Lm-OC2sPqsMo0-U-5BH53ARAMxYr4f7oekwdp3MM52-Wf6sFupdTCFfPF6VgfI5Pw=w1278-h951"
+                    alt=""
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSemcAyBxdWyYvkJp3rOSdv82IyXtGDsbdaqkn9pcyePsALI_KrMHPG2ZBkKok7_1NQVM0nXyEN87evstkCmELcNq4KRTy1OoftV2Oe9Ze-efn_6irn3dXygb6_xo_lP27rE1wNr9LW42M38EuwgVOLaMYMrJvB9XWlnM_wI9poFF6fGsD6phitB4av51u_zE8AS16r9PpVVVPV11vJ4vuj2UnZh5KJeLxPGvRcXdYEiDlDTXAg0zqcGhJfHx1WnkvLsi42dHCckmE-JkYnKk-nuQv8fYpXXrhW45Vu_osmKfBWgAkAl5z3CTCRvSsapRHTRE2adpkJvAx91hr7AqwhVknO9JumSL5hofT_-tWlPXNWw8YKg1VpzX87nYXHNN4F54kw5HJ0WQAXOiwr7TLjc3UaIflvfRprqA-YUjt_MS5Om7dYR_-W7GKOcTrF5lH3YdSNyxoyHfVl0tr-8_Q7uy8shgb9lmOI_CvDHpwTbNc1KXS3U7LElu7hC4_GwQBFr5cwYw2IrqpLXiot-uF9flsV3G3OJJSv3wNx3iZeAn5z_5pUyJTY7EUAikx4EmXTMi6uUsDEMzMaK0uyfW2-KLSshX-0hjznqNhq29PceYM92a8BflSG5CIgEud3lTFEF-uILQaIRLWbR9GKXN-goaHYCzMayakV3_lq5loL6_981PJ-87ROlkbvSNmlDuwn_myEzdEGqmMlGKuIE1OkVOIbhwvC69RuptFbzTUGvpgyqr95s0ClBSvv_ytrYt0w6Sw8886-spPT_o4INsW4P3gA1n347sMZSWAS2bdKP90PUN6riXLve3x61APdSjv0d08c-KkoZjFRyYatxWGq9dWTYEB5i_pVhRSWW3RqR7rJ_GUWU_UMNZojeu-UWDNmKpahjGviiaEfbkt3Zgrpun8FwoJLT53EYALig-FxhwKcmp-RZX3A5BFP1xbrxflJ4gjv16dH1MPLYJQIFI_VXpZWmugMI1YRKSkJP1DjbJSTovLideM7wHT7pdnOmQcyUsZKBGcF4XD1CuNen5cBJb25eslFs5u0CrL_PamgnRTl0AIhd9IkQQZwJCPHe53dm6HRDCedK6GpS9oQcIXQMuByWYBhJ1Jq6uQOGQzCDdInz-icfrlVa0XbJwmGFvQ5kQC0Y9bzhEV_n3yIEMmptQ_cJtrrUGvgQJ-xuKm-Iv9FmJKbJ9GyKQ7k8h8TFSZQFtUG4aDIuT9H3AHQDw6_uiW4fY1S2lKb82DeZl4xN9vCh3h1W8XtCo7QUOF6p7K1z2eMABr5oG9j2O1Wv4O4Vn3dnfP7_Mt1r_fRU1OMDVALIMiXwyOU0XKHVEfjXKXDSnpm8uXEEvfbvV0IHH9Xb3IveuawbGXuUr7_57ztQJ41ujdTP0qpS8ow46195EvEMwvcyTjgI5EgbyscDo2N4zZ4xmizdATe5a-6PocIWLm8HApRhRaxMljXHvtSBbMoJx5P3qPVkzrpi1sZHz2xymfFeb9t4c3vh8jbkmTFF2S6Jf5KCHpQfWGPf_Y8IU4ImJaRpwwe9Op4zfxYYDXWQ4v9l_9jpS1T73DthlXZCXUtnCkD6XXk39z2PVsc1f8uw=w1278-h951"
+                    alt=""
+                  />
+
+                  <img
+                    src="https://lh3.googleusercontent.com/fife/AMPSeme4-pYCPjd3CKVl0OtfMW613SXvWLQnsnK_7YXiPcSdh4_E35jn33VwApEWEtXuc6GJXoWySDPUWJJm5I5ItkJxnr7Z009ACIoQ2hHcjuHfYzLAa0TQtCve33cq_Ft-A7sZtkml8DE_9dvhKOwFZjMgXD0MIFXYMpFXLf8loZjEQindMCRxXFcdiA7xvpDqcQVnA5xYPID8p9ON0CZqD7tFzMJoMiwduao_SoxJIrJVU2zG8SM7JudBsdnKheThn_iwEqf7f0GAfKjKgfsrXyP5vvIhMD_veXBsYwKfg4k36zzsULQS_8EsRxczmP2it-JLY8iLzgGHJBi5uIWrBA7i6DJ-2RyOCIFReDMl_czpvJhxnP4_ANnXUlDWevKgl-T9VIaUTblu3CiurhwWybhf5nLYqeyU0GhYhuEZsY-p4HWy3aB1oqX6bgzn-ujh3KNQqmOcJomFKIIWvbrvzc9cf_FAYtAlFNtrSPl0I6byPNci7ImwMogDb-FjSXzXZrOxZBwuBdN7_8V-XzzzPoif9wSHrBKz86eyCiuSeZCTb9b-QAOToO2Q3AUuxemxhMyb8sopxoX7lH3W1iHMu8BP4ej_XZLgNa0TMdYqEmpOxdWO19r9C7zKRbI8TEY2aCb0a-GcRRHGleouXsPo7pz7KMngiWtSc9p8JKpfRtE6iASYC97srVLOTJlVQhTxaAMxOqQd3KJD-hrRXpuNJUZxSx3T1NPDYXEE7dMUGHthlAR2ntZ1Of8Qr3ycU6obnIZgq4HdkN-BMwmcxpU9K4B7kI_k35NqYS-tzf3B9wHwVmF705Tu4KblnFx3Z_Magpx_dhyxRGUYMrVYWUo74XSV2YvlsOdT5fGakz7H_APFuXpbOfhOFsGVxVk6WhGxOu9aFoCScODNVcV7LJLmzz4jBHJjYKF2fttXbYYxXYcdfWP12teMMWxJVrNP9bQPOnsKO7mkwRfYFI7LNtYa6NgZCDOboze55yzwANcVjpzNgk0vggpukUq-GmtWrpMU8nGZAqS_XSnvOn69Jfpx2biCdK74Dur2JeVSJjX9E1OEzaIpTJAj2RUfDMNm1dwNaBELnV93lu83WRSJC_HwvofCKRabeYxa95OUxvfCB2oQ6kT1jygh1k234ZlnV8wq_zb7nFuoMtjNy0DBlXkOxzLEMQx24hGX2tmUIu3um9UAqXeTYm6AxRipoyJFUJJ-nnVb5QP3lBt55bFAuw8odR7WGAb3v9_IbKDlAUiNUIoBOlnbAXNe4uVNKBDcbH3O7NsXC-aLp9NjL72qLYuHqQZBwv5jnTSBhqgbOyPDZ8frAhG-L6TVv5Umcl2TU1TyxjCbTISz804vXuNI_S5tmTAy-OmVOR31FV8dGzoJjcyjEDQnxjjsD70X_vcs2mDCuGg_ZDy7hUNhivwbomwe_vrE-uJW9mKR4WX4jb1tUS2UHbeELfqIDm4RKeYvypxYnhNcI2Q_E9PKrg949vHoElSd4t_nmiPzMa6mVSW9bZd9J_KvF-_sspPMYAayKvo7pby47XRlMx8IRUAMuMAiMUvm9tI6U9w57fjRsilO1os2ZbrstZgWhxj54ItPpNwr4g=w1278-h951"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </section>
+
             <h2 class="como-llegar">¿Cómo llegar?</h2>
             <div class="contenedor-ubicaciones">
               <div class="contenedor-ubicacion">
@@ -438,10 +615,205 @@ font-family: 'Roboto Slab', serif; */
             <!-- Confirmar asistencia -->
             <!-- Whatsapp -->
             <!-- Te esperamos -->
+            
+
+      
+              
+              
+        
+
+
+
+
+
+
+
+
+
+            <!-- Fin prueba -->
+
+
           </div>
         </div>
       </div>
     </article>
+
+    <!-- <section class="seccion-carrusel">
+      <div id="drag-container">
+        <div id="spin-container">
+          <img
+            src="https://images.pexels.com/photos/206395/pexels-photo-206395.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
+        </div>
+      </div>
+    </section> -->
+
+    </style>
+
+    <script>
+      // Author: Hoang Tran (https://www.facebook.com/profile.php?id=100004848287494)
+      // Github verson (1 file .html): https://github.com/HoangTran0410/3DCarousel/blob/master/index.html
+
+      // You can change global variables here:
+      var radius = 240; // how big of the radius
+      var autoRotate = true; // auto rotate or not
+      var rotateSpeed = -60; // unit: seconds/360 degrees
+      var imgWidth = 120; // width of images (unit: px)
+      var imgHeight = 170; // height of images (unit: px)
+
+      // Link of background music - set 'null' if you dont want to play background music
+      // var bgMusicURL = "https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a";
+      var bgMusicControls = true; // Show UI music control
+
+      /*
+     NOTE:
+       + imgWidth, imgHeight will work for video
+       + if imgWidth, imgHeight too small, play/pause button in <video> will be hidden
+       + Music link are taken from: https://hoangtran0410.github.io/Visualyze-design-your-own-/?theme=HauMaster&playlist=1&song=1&background=28
+       + Custom from code in tiktok video  https://www.facebook.com/J2TEAM.ManhTuan/videos/1353367338135935/
+*/
+
+      // ===================== start =======================
+      setTimeout(init, 100);
+
+      var odrag = document.getElementById("drag-container");
+      var ospin = document.getElementById("spin-container");
+      var aImg = ospin.getElementsByTagName("img");
+      var aVid = ospin.getElementsByTagName("video");
+      var aEle = [...aImg, ...aVid]; // combine 2 arrays
+
+      // Size of images
+      ospin.style.width = imgWidth + "px";
+      ospin.style.height = imgHeight + "px";
+
+      // Size of ground - depend on radius
+      /*
+      var ground = document.getElementById("ground");
+      ground.style.width = radius * 3 + "px";
+      ground.style.height = radius * 3 + "px";
+        */
+
+      function init(delayTime) {
+        for (var i = 0; i < aEle.length; i++) {
+          aEle[i].style.transform =
+            "rotateY(" +
+            i * (360 / aEle.length) +
+            "deg) translateZ(" +
+            radius +
+            "px)";
+          aEle[i].style.transition = "transform 1s";
+          aEle[i].style.transitionDelay =
+            delayTime || (aEle.length - i) / 4 + "s";
+        }
+      }
+
+      function applyTranform(obj) {
+        // Constrain the angle of camera (between 0 and 180)
+        if (tY > 180) tY = 180;
+        if (tY < 0) tY = 0;
+
+        // Apply the angle
+        obj.style.transform = "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+      }
+
+      function playSpin(yes) {
+        ospin.style.animationPlayState = yes ? "running" : "paused";
+      }
+
+      var sX,
+        sY,
+        nX,
+        nY,
+        desX = 0,
+        desY = 0,
+        tX = 0,
+        tY = 10;
+
+      // auto spin
+      if (autoRotate) {
+        var animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
+        ospin.style.animation = `${animationName} ${Math.abs(
+          rotateSpeed
+        )}s infinite linear`;
+      }
+
+      // add background music
+//       if (bgMusicURL) {
+//         document.getElementById("music-container").innerHTML += `
+// <audio src="${bgMusicURL}" ${
+//           bgMusicControls ? "controls" : ""
+//         } autoplay loop>    
+// <p>If you are reading this, it is because your browser does not support the audio element.</p>
+// </audio>
+// `;
+//       }
+
+      // setup events
+      document.onpointerdown = function(e) {
+        clearInterval(odrag.timer);
+        e = e || window.event;
+        var sX = e.clientX,
+          sY = e.clientY;
+
+        this.onpointermove = function(e) {
+          e = e || window.event;
+          var nX = e.clientX,
+            nY = e.clientY;
+          desX = nX - sX;
+          desY = nY - sY;
+          tX += desX * 0.1;
+          tY += desY * 0.1;
+          applyTranform(odrag);
+          sX = nX;
+          sY = nY;
+        };
+
+        this.onpointerup = function(e) {
+          odrag.timer = setInterval(function() {
+            desX *= 0.95;
+            desY *= 0.95;
+            tX += desX * 0.1;
+            tY += desY * 0.1;
+            applyTranform(odrag);
+            playSpin(false);
+            if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+              clearInterval(odrag.timer);
+              playSpin(true);
+            }
+          }, 17);
+          this.onpointermove = this.onpointerup = null;
+        };
+
+        return false;
+      };
+
+      document.onmousewheel = function(e) {
+        e = e || window.event;
+        var d = e.wheelDelta / 20 || -e.detail;
+        radius += d;
+        init(1);
+      };
+    </script>
   </body>
-  <script src="index.js"></script>
 </html>
