@@ -37,6 +37,10 @@ const trackUrl2 = [
     "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3"
 ];
 const trackUrl = [
+    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
+    "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3",
     "https://github.com/christiancam14/davidycaro.github.io/blob/master/te-voy-a-amar.mp3"
 ]
 // const playPreviousTrackButton = document.getElementById("play-previous");
