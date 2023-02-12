@@ -249,6 +249,18 @@ font-family: 'Roboto Slab', serif; */
         padding: 10px 18px;
         font-size: 16px;
       }
+      
+      .btn-ubicacion{
+        margin-top: 20px;
+      }
+
+      .btn-ubicacion .confirmar-asistencia{
+        margin-bottom: 20px;
+      }
+
+      .titulo-historia{
+        margin: 20px 0;
+      }
 
       @media (width < 720px) {
         .contenedor-img-principal .titulo-imagen {
@@ -293,9 +305,11 @@ font-family: 'Roboto Slab', serif; */
         }
 
         .como-llegar{
-            margin-bottom: 0px;
+            margin-bottom: 10px;
+            font-size: 30px;
         }
       }
+
 
 
 
@@ -505,7 +519,7 @@ font-family: 'Roboto Slab', serif; */
             </button>
             <!-- Botón de reproducir música -->
             <p>Dale play aquí</p>
-            <h2>Esta historia comenzó</h2>
+            <h2 class="titulo-historia">Esta historia comenzó</h2>
             <p class="historia">
               en el año 2011. Nos conocimos de la manera
               más inesperada, para nosotros casualidad, para Dios causalidad. <br><br>
@@ -557,12 +571,13 @@ font-family: 'Roboto Slab', serif; */
             <h2 class="como-llegar">¿Cómo llegar?</h2>
             <div class="contenedor-ubicaciones">
               <div class="contenedor-ubicacion">
-                <p>
+                <p style="line-height: 26px;">
                   <strong style="font-size: 20px">Basílica</strong><br />
                   nuestra señora del rosario <br />
-                  Moniquirá
+                  Moniquirá<br />
+                  <strong>Hora:</strong> 4:00 pm
                 </p>
-                <div class="contenedor-asistencia">
+                <div class="contenedor-asistencia btn-ubicacion">
                   <a
                     href="https://goo.gl/maps/1GwcNWA8A9dr4hTm9"
                     target="_blank"
@@ -572,12 +587,13 @@ font-family: 'Roboto Slab', serif; */
                 </div>
               </div>
               <div class="contenedor-ubicacion">
-                <p>
+                <p style="line-height: 26px;">
                   <strong style="font-size: 20px">Recepción</strong><br />Club
                   imperio <br />
-                  km 2 Vía Santander
+                  km 2 Vía Santander <br />
+                  <strong>Hora:</strong> 6:00 pm
                 </p>
-                <div class="contenedor-asistencia">
+                <div class="contenedor-asistencia btn-ubicacion">
                   <a
                     href="https://www.google.com/maps/search/5.930696,+-73.630895"
                     target="_blank"
@@ -587,7 +603,7 @@ font-family: 'Roboto Slab', serif; */
                 </div>
               </div>
             </div>
-            <h2>¿Cuánto falta?</h2>
+            <h2 class="como-llegar">¿Cuánto falta?</h2>
             <!-- Conteo regresivo -->
             <table id="countdown"></table>
             <div style="margin: 30px 0">
@@ -637,39 +653,6 @@ font-family: 'Roboto Slab', serif; */
         </div>
       </div>
     </article>
-
-    <!-- <section class="seccion-carrusel">
-      <div id="drag-container">
-        <div id="spin-container">
-          <img
-            src="https://images.pexels.com/photos/206395/pexels-photo-206395.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-          <img
-            src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-          <img
-            src="https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-          <img
-            src="https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-          <img
-            src="https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-          <img
-            src="https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            alt=""
-          />
-        </div>
-      </div>
-    </section> -->
-
-    </style>
 
     <script>
       // Author: Hoang Tran (https://www.facebook.com/profile.php?id=100004848287494)
@@ -816,4 +799,5 @@ font-family: 'Roboto Slab', serif; */
       };
     </script>
   </body>
+  <script src="js/script.js"></script>
 </html>
