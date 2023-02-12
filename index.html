@@ -8,6 +8,9 @@
       type="image/x-icon"
       href="https://lh3.googleusercontent.com/fife/AMPSemejEj_D1V684lLilcJqwV5gRq7o23XppFsiMy4w8-Bx8apmqljIIe7-TtrLdRW0VQqBXBrSjsGkhG7MY9qyW5s6HW_jVvN8gFQeUorq-SdDcOMHvjmI9D7VO3ixhJswoHv_QkhhSCB1yquJ5LYOY54rC0VBaZRkpL1-S-_u8NfwyYXy9NXvcIh-kp-Te6Ent8v4AQGfh6Fagbov5DdAGjcFtWn-ePECh7ZLAq1qWZRU1e7GE4ffwVUQV4WibD_iWfVRGqQo4NJqMamoE5A9R8z9vQgO7r1W6J5j0NyocZtYChJ4tLGCD53e5laNR_viOnl8KB5DPFuj8O-HNRXBeDZXgntBPxYQEyiGHWiff1dDyTWThFs390DfjyNee2y3kEOibgzol82GzIZynW8AtZ6v9FHC2LPDdJjS2courHWV2LyGs2XtbM_GMJTQmZw6_LVC-hhwIMtgwHlq4-UBjoC6vOmdlWUJPthDzCyhiHeuc4pDCwVmD9ZdHXPqcSIJqM_h5Zf_JSckke3sHfs-BJ50jEe8NaKfXNyuD7UxXhMt2u6LoVDr8swZ5TYMHnSd3KevfJaY2GyUASRnAItMz56GwodM-mjlOe1ghNbbEGQNQZV_yxhJXJUPCef-r5-VsgicGvU6EqswL5MImkqKs44IogMzexXPQ7dZmN6Y9cwX2648kMi4Obk_HL9qBTK-PMyFGe9qxdeIJm7VLCO_8-6ygHa7n8qxnpDHTKtVWAcLBwMncSXApPMDgpTk9rRg1s_GBzXaxsHWp2h6__EmummfbzJhzmCX8IpBcrDQK3OZNsl9nWzwP8jZoa1guCvuqqTWpBJzaRhqGYnVspYZGrdTHjcwLBf9kbOCa9qZWqYAd-cKUG7Eu3jVMbuksc-HfajJ75UkLCyYZYkrcL7qPbnJjAccoPaP8X6kRQslo8ubCc5kVhryrFEqQOcdx-d5VH5bvVxIAI81YiS6fnW1-h1Gc6FVQUK0ZIlYZ_mE4o7PHqypThtWSkb0-t20L1Wa0pyvC-9ddFXb0sm4XfcD8tP8ugnTj08RfSnrjkT6EqMBH5b58GrWp_UkjhxkToCoEn3BTEKLK0ht7_IOeMK7MAIbVQwMztQArqZ8tlImLsgP8PstcdeHL_in5uBShHv0ueVUBXw0Yh0T_t4yZs5pM30Ykf5QK26NAbqwrrL2N9c0jzZfpXCitbpkznOg00lwZeuKO2qmfGfkxtCW6lPzJSzmOV3HtDy9b4Rsrf1VQHfs_pFVtbPZig42Vltyuw4hItGpX7vjLt79-Ux9zGeT3XXXELsChYso35hEVmMjyRhnpT-mFlY-WRUTjfW_sj8_YNolGlCkDqMZCoM2VERLEUCkzgLoO2zFdyLh8SV-AWHbI6-p6Ey7YbEGqmer6QNsxiYdEhl6Fn7HTeFywdhy3WBzQt7QCJFvwpI0i9t7ul5PegStdQUaeZ3djiHDNUia9HOSU5CSP4LWUdIpYEKgzSG7xKiXIMd6CUoBUTQMfVQbNdpUM59KUnN4PTAKDrM1_ZZY88uufIj0nGiN8n8rAi1YNtiOrOm224iT8OzN5z-x6C8wAGY3qVMqsaZqfiAUUw=w2560-h904"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=EB+Garamond&family=Jura:wght@300&family=Lobster&family=Poppins:wght@300&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -123,9 +126,13 @@ font-family: 'Roboto Slab', serif; */
         margin: -180px auto 40px;
         font-size: 80px;
         font-weight: 600;
-        font-family: "Courgette", cursive;
         font-family: "Explora", cursive;
-        text-shadow: black 2px 2px 18px, #ffff 2px 2px 18px;
+        font-family: 'Lobster', cursive;
+        font-family: 'Jura', sans-serif;
+        font-family: 'EB Garamond', serif;
+        font-family: "Courgette", cursive;
+        
+        /* text-shadow: black 2px 2px 18px, #ffff 2px 2px 18px; */
         z-index: 2;
         color: var(--border-color);
       }
@@ -281,6 +288,11 @@ font-family: 'Roboto Slab', serif; */
 
 
       @media (width < 767px) {
+
+        .contenedor-img-principal .titulo-imagen {
+            text-shadow: black 2px 2px 18px, #ffff 2px 2px 18px;
+        }
+
         .contenedor-img-principal .titulo-imagen {
           position: inherit;
           font-size: 48px;
