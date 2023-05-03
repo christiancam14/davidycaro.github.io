@@ -1,5 +1,5 @@
 // Fecha final de la cuenta regresiva (ejemplo: 31 de diciembre de 2022)
-var countDownDate = new Date("Jun 10, 2023 23:59:59").getTime();
+var countDownDate = new Date("Jun 10, 2023 16:00:00").getTime();
 
 // Actualiza la cuenta regresiva cada segundo
 var x = setInterval(function() {
